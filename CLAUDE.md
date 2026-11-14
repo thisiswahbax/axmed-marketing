@@ -48,6 +48,7 @@ If the answer is no, rewrite before showing it to anyone.
 |---|---|
 | Brand rules, tokens, logo, moodboard | `brand/` |
 | Photo-led post templates (primary look) | `brand/photo-system/`, photos in `assets/photos/` |
+| Product imagery: product cards, premium shots, line illustrations, Sina orb | `brand/product-shots/README.md`, `brand/product-cards/`, `brand/illustrations/`, `brand/sina/` |
 | DNA patterns + photo frames (secondary) | `brand/patterns/`, `scripts/make-patterns.py`, `scripts/treat-photo.py` |
 | Positioning, campaign briefs, channel plan, measures, fact sheet | `strategy/` |
 | Interview guide, case-study structure, consent checklist | `strategy/templates/` |
