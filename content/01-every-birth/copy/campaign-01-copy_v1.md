@@ -64,7 +64,7 @@ UTM: `node scripts/utm.mjs https://axmed.com/<path> <source> <medium> <asset-id>
 >
 > Planning 2027? Send us your list: [link · utm_content=A1.5]
 
-## A1.6: Impact story card (Thu 10 Dec) · `cards/A1.6_impact-card.png` **[REF required]**
+## A1.6: Impact story card (Thu 10 Dec) · `cards/A1.6_impact-card.jpg` **[REF required]**
 > In northern Ghana, facilities recorded zero maternal deaths where the PPH bundle was in use [REF].
 > The midwives did the work. The bundle was on the shelf. Every birth deserves both.
 
@@ -87,7 +87,7 @@ Narrator voice (ElevenLabs house voice). On-screen platform: real captures, or d
 
 ---
 
-## A2.2: Data infographic caption (Tue 15 Dec) · `cards/A2.2_data-infographic.png` **[fact-sheet sign-off]**
+## A2.2: Data infographic caption (Tue 15 Dec) · `cards/A2.2_data-infographic.jpg` **[fact-sheet sign-off]**
 > Care in numbers. MNCH supply to 24 buyers in 13 countries, 3.4 million calibrated drapes ordered, and over a million already delivered. More landing every week.
 
 ## A2.3: Case study one-pager: RMS Rwanda (Thu 17 Dec)
@@ -115,7 +115,7 @@ Use `strategy/templates/case-study.md` after the interview. Headline draft: *"Th
 
 **Landing page hero:** "Send us your 2027 list. We'll show you how simple upstream can be." Sub: "Drop your file. Sina matches every line. Offer within 48 hours." Forms: RFQ upload (→ Sina /buy) · Funder expression of interest · Activate account.
 
-## A2.6: WhatsApp Benchmark card (5–7 Jan) · `cards/A2.6_benchmark-whatsapp.png`
+## A2.6: WhatsApp Benchmark card (5–7 Jan) · `cards/A2.6_benchmark-whatsapp.jpg`
 > Hi {{name}}, planning 2027 already? Send us your PPH bundle list as it is (Excel, PDF or even a photo of it) and we'll come back with an offer within 48 hours. [link · utm_source=whatsapp&utm_content=A2.6]
 
 ## A2.7: Personal GTM outreach (from 5 Jan, trigger-flagged accounts)
