@@ -32,6 +32,12 @@
   --cyan-halo: rgba(12, 196, 255, .22);
   --shadow: 0 30px 70px -34px rgba(20, 15, 70, .38), 0 6px 14px -8px rgba(20, 15, 70, .14);
 
+  --cyan-glow: rgba(12, 196, 255, .34);
+  --rim: rgba(244, 242, 253, .55);
+  --on-dark-line: rgba(244, 242, 253, .55);
+  --on-dark-fill: rgba(244, 242, 253, .06);
+  --on-dark-soft: rgba(244, 242, 253, .78);
+
   --serif: "Instrument Serif", Georgia, serif;
   --display: "Instrument Sans", system-ui, sans-serif;
   --body: "Inter", system-ui, sans-serif;
@@ -123,3 +129,18 @@ a:focus-visible, button:focus-visible, .cta:focus-visible, .opt:focus-visible, .
 .cta:hover, .opt:hover, .go:hover { filter: brightness(.96); }
 .cta:active, .opt:active, .go:active { transform: translateY(1px); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* atmosphere: blurred tonal fields with grain (brand/backgrounds), content always on top */
+.atmo { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.msg { font: 400 30px/1.4 var(--body); padding: 20px 28px; border-radius: 34px; max-width: 640px; }
+.msg.them { border: 1.5px solid var(--on-dark-line); background: var(--on-dark-fill); color: var(--on-indigo); }
+.msg.sina { background: var(--card); color: var(--ink); }
+.msg .state { display: flex; align-items: center; gap: 12px; font: 400 22px var(--body); color: var(--ink-quiet); margin-bottom: 8px; }
+.on-dark { color: var(--on-indigo); }
+.on-dark .label, .label.on-dark { color: var(--on-dark-soft); }
+
+/* the orb on an atmosphere field: share the light and the grain, never a cut-out */
+.orb.blend { box-shadow: 0 0 0 1px var(--rim) inset, 0 50px 90px -40px var(--scrim-soft), 0 0 120px 10px var(--cyan-halo); }
+.orb.blend::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(55% 45% at 30% 22%, var(--rim), transparent 70%); mix-blend-mode: screen; }
+.orb.blend::after { content: ""; position: absolute; inset: 0; border-radius: 50%; opacity: .45; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); }

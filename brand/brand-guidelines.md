@@ -98,6 +98,20 @@ Our posts lead with photography: one photo, one hue, fine-line overlays and edit
 - Glass cards, soft indigo shadows, gradient accents, dotted backdrop. Fancy but minimal: ≤5
   elements in view.
 
+### Atmosphere backgrounds
+
+Blurred tonal fields with film grain (`brand/backgrounds/`), one Axmed hue each: indigo dusk, indigo haze, cyan deep, cyan mist and warm paper. Use them for conversations with Sina, news, statements and calls to action, always with real content on top, never as an empty wash. See `brand/backgrounds/README.md`.
+
+Light fields (`lilac-mist`, `ice-mist`) are the default behind the Sina orb: the orb is then the one deep object on the page and blends in. On dark fields use `.orb.blend` (halo, rim light, shared grain).
+
+### Dot-matrix illustrations
+
+Shapes built from pixel dots on a construction grid, with motion: assemble, scan, glint (`brand/dot-matrix/`). Vial, ampoule, shield, box, globe, list, orb and the mark. One lit idea per illustration, in cyan.
+
+### Strata art
+
+Layered terrain for "everything coming together" stories: data, pooled demand, the platform (`brand/strata/`). Brand, warm and light palettes; text in the sky or on a panel, never across the strata.
+
 ### Motion (from the product-video house style)
 
 Nothing is ever still; springs not curves; carry, don't cut; time everything to words; open and

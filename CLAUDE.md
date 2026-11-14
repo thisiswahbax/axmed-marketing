@@ -48,6 +48,9 @@ If the answer is no, rewrite before showing it to anyone.
 |---|---|
 | Brand rules, tokens, logo, moodboard | `brand/` |
 | Photo-led post templates (primary look) | `brand/photo-system/`, photos in `assets/photos/` |
+| Atmosphere backgrounds (ElevenLabs-style, one hue each; light mists behind the orb) | `brand/backgrounds/`, `scripts/make-backgrounds.py` |
+| Dot-matrix illustrations with motion | `brand/dot-matrix/`, `scripts/export-dotmatrix.mjs` |
+| Strata art (layered terrain, stills + loops) | `brand/strata/`, `scripts/make-terrain.py` |
 | Product imagery: product cards, premium shots, line illustrations, Sina orb | `brand/product-shots/README.md`, `brand/product-cards/`, `brand/illustrations/`, `brand/sina/` |
 | DNA patterns + photo frames (secondary) | `brand/patterns/`, `scripts/make-patterns.py`, `scripts/treat-photo.py` |
 | Positioning, campaign briefs, channel plan, measures, fact sheet | `strategy/` |

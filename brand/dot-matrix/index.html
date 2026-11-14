@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Axmed dot-matrix illustrations</title>
+<meta name="description" content="Axmed dot-matrix illustrations: shapes drawn as pixel dots on a construction grid, with motion.">
+<link rel="stylesheet" href="../system.css">
+<style>
+  .gal { max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+  .gal figure { margin: 0; } .gal canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 16px; }
+  .gal figcaption { font: 500 16px var(--body); color: var(--ink-soft); padding-top: 12px; }
+  h1 { font: 400 64px/1.05 var(--serif); color: var(--indigo); max-width: 1240px; margin: 72px auto 0; padding: 0 32px; }
+</style></head><body>
+<h1>Dot-matrix illustrations</h1>
+<div class="gal" id="gal"></div>
+<script src="shapes.js"></script><script src="dotmatrix.js"></script>
+<script>
+  const q = new URLSearchParams(location.search), only = q.get("shape"), theme = q.get("theme") || "night", size = +(q.get("size") || 720);
+  for (const [k, s] of Object.entries(AX_SHAPES)) {
+    if (only && k !== only) continue;
+    const f = document.createElement("figure"), c = document.createElement("canvas");
+    c.width = c.height = size; c.setAttribute("role", "img"); c.setAttribute("aria-label", s.label + " drawn in dots");
+    const cap = document.createElement("figcaption"); cap.textContent = s.label + " (" + k + ")";
+    f.append(c, cap); gal.append(f);
+    window["dm_" + k] = AxDotMatrix(c, { shape: k, theme, manual: q.has("manual"), seed: k.length * 7 });
+  }
+</script></body></html>
