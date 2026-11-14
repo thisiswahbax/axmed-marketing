@@ -24,3 +24,16 @@ pills-and-capsules clichés, boxes-and-trucks only, neon "AI" clichés.
 
 **Editorial, data-confident, human.** Big Instrument Sans headline, one real photo or one
 platform moment, one cyan accent, generous indigo fields.
+
+## Website and motion references (Nov 2026)
+
+| Source | What we take | Where it lives in the repo |
+|---|---|---|
+| intercom.com | Two-tone headlines (statement in ink, the rest in a quieter tint); a moving ribbon of fine lines behind the product; a dot grid with tiles at the closing CTA | `site/` headlines (`span` = `--indigo-quiet`), strata art |
+| zaro.ai | Dot-matrix illustrations that assemble and glint; notched-corner cards; a dot world map on the dark CTA; lilac comparison panels | `brand/dot-matrix/`, `site/` people cards (`.cut`), scroll hero globe |
+| skydive.com | The agent at the centre with an orbit of what it connects to | Sina orb as the hub of the scroll-hero globe |
+| augusthealth.com | Small dot-matrix icons beside feature titles; light tinted bento cards; serif heads | `brand/product-cards/`, `brand/backgrounds/` mists |
+| elevenlabs.io | Soft atmosphere gradients | `brand/backgrounds/` |
+
+Rule: the motion is ours (dot globe, routes, the orb). Never copy their art. Our people photos are real
+Axmed or partner photos with consent; no AI-generated faces standing in for patients or health workers.

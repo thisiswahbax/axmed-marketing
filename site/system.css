@@ -1,0 +1,147 @@
+/* Hallmark · v2.0.0 · axmed-marketing assets · surface: social slides and web sections · posture: committed · nav: none (slides) · footer: logo only · hero: headline + one sentence · theme: custom (Axmed brand) · genre: modern-minimal · shape: social slides 1080x1350 + web sections · signature: a messy order list becoming matched lines, with Sina's orb · fonts: Instrument Serif (statements), Instrument Sans (numbers, big words), Inter (body, UI) · imagery: real Axmed photos in slots, product UI, line illustrations · material absent: partner photos, approved quotes, signed numbers */
+/* critique: one indigo field, one cyan accent per frame, no eyebrows, no italic words in roman heads, no tracked capitals, no gradients across hues, no window chrome, no stacked cards, no invented figures */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Sans:wght@500;600;700&family=Instrument+Serif&family=JetBrains+Mono:wght@400&display=swap");
+
+:root {
+  /* colour: one anchor hue (indigo), one accent (cyan), warm-cool paper, tinted whites */
+  --indigo: #261C7A;
+  --indigo-ink: #1E1662;
+  --indigo-app: #392AB0;
+  --indigo-mist: #EEEBF8;
+  --cyan: #0CC4FF;
+  --cyan-mist: #E6F6FC;
+  --sage-mist: #EAF1EA;
+  --blush-mist: #F7ECEA;
+  --paper: #FAFAFC;
+  --paper-warm: #F7F6F3;
+  --card: #FDFDFE;
+  --ink: #141A2E;
+  --ink-soft: #475067;
+  --ink-quiet: #5F667B;
+  --indigo-quiet: #6A61AE;
+  --line: #E6E8EF;
+  --line-warm: #E7E4DE;
+  --ok: #067647;
+  --ok-mist: #ECF7F0;
+  --ask: #8A4B00;
+  --ask-mist: #FFF4DF;
+  --on-indigo: #F4F2FD;
+  --on-indigo-soft: #C9C4EC;
+  --scrim: rgba(20, 15, 70, .72);
+  --scrim-soft: rgba(20, 15, 70, .38);
+  --cyan-halo: rgba(12, 196, 255, .22);
+  --shadow: 0 30px 70px -34px rgba(20, 15, 70, .38), 0 6px 14px -8px rgba(20, 15, 70, .14);
+
+  --cyan-glow: rgba(12, 196, 255, .34);
+  --rim: rgba(244, 242, 253, .55);
+  --on-dark-line: rgba(244, 242, 253, .55);
+  --on-dark-fill: rgba(244, 242, 253, .06);
+  --on-dark-soft: rgba(244, 242, 253, .78);
+
+  --serif: "Instrument Serif", Georgia, serif;
+  --display: "Instrument Sans", system-ui, sans-serif;
+  --body: "Inter", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html, body { overflow-x: clip; margin: 0; }
+* { box-sizing: border-box; }
+body { background: var(--paper-warm); font-family: var(--body); color: var(--ink); }
+
+/* a slide: 1080 x 1350, children placed absolutely */
+.slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; background: var(--paper); color: var(--ink); }
+.slide.sq { height: 1080px; }
+.slide > * { position: absolute; }
+.slide.field { background: var(--indigo); color: var(--on-indigo); }
+.slide.mist { background: var(--indigo-mist); }
+.slide.warm { background: var(--paper-warm); }
+
+/* type */
+.head { font: 400 92px/1.02 var(--serif); letter-spacing: -.01em; overflow-wrap: break-word; min-width: 0; margin: 0; }
+.head.m { font-size: 76px; }
+.head.l { font-size: 112px; }
+.lead { font: 400 30px/1.42 var(--body); color: var(--ink-soft); margin: 0; }
+.field .lead { color: var(--on-indigo-soft); }
+.label { font: 500 22px/1.3 var(--body); color: var(--ink-quiet); }
+.field .label { color: var(--on-indigo-soft); }
+.big { font: 600 200px/.86 var(--display); letter-spacing: -.045em; }
+.src { font: 400 18px/1.4 var(--body); color: var(--ink-quiet); }
+.field .src { color: var(--on-indigo-soft); }
+.flag { font: 600 17px var(--body); color: var(--ask); background: var(--ask-mist); padding: 4px 12px; border-radius: 6px; }
+
+/* brand slot: renderer fills .brand with the official logo */
+.brand { left: 72px; bottom: 64px; }
+
+/* action */
+.cta { display: inline-block; font: 600 28px var(--body); padding: 24px 36px; border-radius: 999px; background: var(--cyan); color: var(--indigo-ink); }
+.field .cta { background: var(--cyan); }
+
+/* product UI: one surface, never a card inside a card */
+.ui { background: var(--card); border-radius: 22px; box-shadow: var(--shadow); font-family: var(--body); color: var(--ink); overflow: hidden; }
+.ui .top { display: flex; align-items: center; gap: 16px; padding: 24px 32px 16px; }
+.ui .name { font: 600 22px var(--body); }
+.ui .meta { font: 400 17px var(--body); color: var(--ink-quiet); margin-top: 2px; }
+.ui .row { display: grid; align-items: center; gap: 16px; padding: 16px 32px; border-top: 1px solid var(--line); font: 500 20px var(--body); }
+.ui .sub { display: block; font: 400 16px var(--body); color: var(--ink-quiet); margin-top: 4px; }
+.ui .raw { font: 400 17px var(--mono); color: var(--ink-quiet); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ui .th { padding: 12px 32px; border-top: 1px solid var(--line); background: var(--paper); font: 500 15px var(--body); color: var(--ink-quiet); }
+.st { font: 600 15px var(--body); padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+.st.ok { background: var(--ok-mist); color: var(--ok); }
+.st.ask { background: var(--indigo-ink); color: var(--on-indigo); }
+.st.n { background: var(--paper); color: var(--ink-soft); }
+.fade { -webkit-mask-image: linear-gradient(var(--ink) 0%, transparent 95%); mask-image: linear-gradient(var(--ink) 0%, transparent 95%); opacity: .5; }
+
+/* sheet: a spreadsheet as a document, no OS window */
+.sheet { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.grid { display: grid; grid-template-columns: 44px minmax(0, 1.9fr) minmax(0, .9fr) minmax(0, 1fr); font: 400 17px var(--mono); color: var(--ink-soft); }
+.grid > div { height: 50px; display: flex; align-items: center; padding: 0 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); white-space: nowrap; overflow: hidden; }
+.grid .h { background: var(--paper); color: var(--ink-quiet); font: 500 14px var(--body); justify-content: center; }
+.grid .th { font: 600 15px var(--body); color: var(--ink-soft); }
+.grid .hl { background: var(--ask-mist); }
+
+/* Sina */
+.orb { border-radius: 50%; background: url("sina/sina-orb-4.png") center / cover; box-shadow: 0 0 0 1px var(--cyan-halo), 0 30px 60px -24px var(--scrim-soft); }
+.orb.o1 { background-image: url("sina/sina-orb-1.png"); }
+.halo { border-radius: 50%; background: radial-gradient(circle, var(--cyan-halo) 0%, transparent 68%); }
+.bubble { background: var(--card); border-radius: 26px 26px 26px 8px; box-shadow: var(--shadow); font: 400 26px/1.45 var(--body); color: var(--ink); padding: 24px 32px; }
+.opt { display: inline-block; font: 500 20px var(--body); padding: 12px 24px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); color: var(--ink-soft); }
+.opt.on { background: var(--indigo-ink); border-color: var(--indigo-ink); color: var(--on-indigo); }
+
+/* photo: one hue wash only, or the photo as it is */
+.photo { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.wash { inset: 0; background: var(--indigo); mix-blend-mode: multiply; opacity: .78; }
+.scrim-b { left: 0; right: 0; bottom: 0; height: 58%; background: linear-gradient(to top, var(--scrim), transparent); }
+
+/* a slot for a real photo the team supplies (never a stock person standing in for a partner) */
+.slot { background: var(--indigo-mist); border-radius: 24px; display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; overflow: hidden; }
+.slot .label { color: var(--ink-soft); max-width: 80%; }
+.slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: .9; }
+
+/* product card system (tints per module) */
+.tint-sina { background: var(--indigo-mist); }
+.tint-quotes { background: var(--cyan-mist); }
+.tint-quality { background: var(--sage-mist); }
+.tint-delivery { background: var(--blush-mist); }
+.go { width: 84px; height: 84px; border-radius: 50%; background: var(--card); display: grid; place-items: center; box-shadow: var(--shadow); }
+
+/* states: the slides are static images, but the system is reused on the web */
+a:focus-visible, button:focus-visible, .cta:focus-visible, .opt:focus-visible, .go:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; transition: none; }
+.cta:hover, .opt:hover, .go:hover { filter: brightness(.96); }
+.cta:active, .opt:active, .go:active { transform: translateY(1px); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* atmosphere: blurred tonal fields with grain (brand/backgrounds), content always on top */
+.atmo { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.msg { font: 400 30px/1.4 var(--body); padding: 20px 28px; border-radius: 34px; max-width: 640px; }
+.msg.them { border: 1.5px solid var(--on-dark-line); background: var(--on-dark-fill); color: var(--on-indigo); }
+.msg.sina { background: var(--card); color: var(--ink); }
+.msg .state { display: flex; align-items: center; gap: 12px; font: 400 22px var(--body); color: var(--ink-quiet); margin-bottom: 8px; }
+.on-dark { color: var(--on-indigo); }
+.on-dark .label, .label.on-dark { color: var(--on-dark-soft); }
+
+/* the orb on an atmosphere field: share the light and the grain, never a cut-out */
+.orb.blend { box-shadow: 0 0 0 1px var(--rim) inset, 0 50px 90px -40px var(--scrim-soft), 0 0 120px 10px var(--cyan-halo); }
+.orb.blend::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(55% 45% at 30% 22%, var(--rim), transparent 70%); mix-blend-mode: screen; }
+.orb.blend::after { content: ""; position: absolute; inset: 0; border-radius: 50%; opacity: .45; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); }
