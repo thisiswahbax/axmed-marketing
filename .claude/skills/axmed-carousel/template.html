@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../../brand/tokens.css">
+<style>
+  :root { --w: 1080px; --h: 1350px; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #ccc; font-family: var(--ax-font-body); color: var(--ax-ink); }
+  .slide { width: var(--w); height: var(--h); position: relative; overflow: hidden;
+    background: var(--ax-canvas); padding: 96px; display: flex; flex-direction: column; justify-content: center; }
+  .slide::before { content: ""; position: absolute; inset: 0; opacity: .5;
+    background-image: radial-gradient(var(--ax-line) 2px, transparent 2px); background-size: 36px 36px; }
+  .slide > * { position: relative; }
+  .brand { position: absolute; top: 72px; left: 96px; font: 700 34px var(--ax-font-display); color: var(--ax-indigo); letter-spacing: -.02em; }
+  .page { position: absolute; top: 80px; right: 96px; font: 600 22px var(--ax-font-body); color: var(--ax-muted); }
+  .eyebrow { font: 700 24px var(--ax-font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ax-cyan); margin-bottom: 28px; }
+  h1, h2 { font-family: var(--ax-font-display); letter-spacing: -.025em; line-height: 1.02; color: var(--ax-indigo); }
+  h1 { font-size: 112px; font-weight: 700; }
+  h2 { font-size: 84px; font-weight: 700; }
+  p.lead { font-size: 40px; line-height: 1.35; margin-top: 36px; color: var(--ax-ink); max-width: 860px; }
+  .source { position: absolute; bottom: 72px; left: 96px; right: 96px; font-size: 20px; color: var(--ax-muted); }
+  .card { background: rgba(255,255,255,.85); border: 1px solid var(--ax-line); border-radius: var(--ax-radius); box-shadow: var(--ax-shadow); padding: 40px 48px; }
+  .accent { color: var(--ax-cyan); }
+  /* cover + cta: indigo field */
+  .cover, .cta { background: linear-gradient(160deg, var(--ax-indigo) 0%, var(--ax-indigo-deep) 100%); }
+  .cover::before, .cta::before { background-image: radial-gradient(rgba(255,255,255,.08) 2px, transparent 2px); }
+  .cover h1, .cta h2, .cover .brand, .cta .brand { color: #fff; }
+  .cover p.lead, .cta p.lead { color: #D9D6F5; }
+  .cover .page, .cta .page { color: #A9A3E6; }
+  /* stat */
+  .stat .num { font: 700 260px/0.9 var(--ax-font-display); letter-spacing: -.04em; color: var(--ax-indigo); }
+  .stat .num .accent { color: var(--ax-cyan); }
+  /* list */
+  .list ol { list-style: none; padding: 0; margin-top: 44px; display: grid; gap: 22px; }
+  .list li { display: flex; gap: 28px; align-items: center; font-size: 36px; font-weight: 500; }
+  .list li b { flex: 0 0 72px; height: 72px; border-radius: 50%; background: var(--ax-indigo-soft); color: var(--ax-indigo);
+    display: grid; place-items: center; font: 700 30px var(--ax-font-display); }
+  /* quote */
+  .quote blockquote { font: 600 64px/1.15 var(--ax-font-display); color: var(--ax-indigo); letter-spacing: -.02em; }
+  .quote cite { display: block; margin-top: 40px; font: 500 30px var(--ax-font-body); font-style: normal; color: var(--ax-muted); }
+  .btn { display: inline-block; margin-top: 56px; background: var(--ax-cyan); color: var(--ax-indigo-deep); font: 700 34px var(--ax-font-body); padding: 26px 44px; border-radius: 999px; }
+</style>
+</head>
+<body>
+
+<!-- .brand is filled with the real Axmed logo at render time. Backgrounds: add bg-<pattern> (see brand/patterns/README.md).
+     EXAMPLE CONTENT for A1.5 — replace. Numbers must match strategy/fact-sheet.md -->
+<section class="slide cover bg-strands-dark">
+  <div class="brand">Axmed</div><div class="page">1/6</div>
+  <div class="eyebrow">Every birth.</div>
+  <h1>The PPH bundle, in 5 slides.</h1>
+  <p class="lead">What it is, why it works, and why buying it should be simple.</p>
+</section>
+
+<section class="slide list">
+  <div class="brand">Axmed</div><div class="page">2/6</div>
+  <div class="eyebrow">What's in the bundle</div>
+  <h2>Detect early. Treat together.</h2>
+  <ol>
+    <li><b>1</b>Calibrated drape — measures blood loss at birth</li>
+    <li><b>2</b>Heat-stable carbetocin</li>
+    <li><b>3</b>Tranexamic acid</li>
+    <li><b>4</b>Oxytocin</li>
+    <li><b>5</b>Misoprostol</li>
+  </ol>
+</section>
+
+<section class="slide stat">
+  <div class="brand">Axmed</div><div class="page">3/6</div>
+  <div class="eyebrow">Why it works</div>
+  <div class="num">60<span class="accent">%</span></div>
+  <p class="lead">less severe bleeding when a calibrated drape is used with the treatment bundle.</p>
+  <div class="source">Source: E-MOTIVE trial, WHO-backed, NEJM 2023 — over 200,000 women, 80 hospitals in Kenya, Nigeria, South Africa and Tanzania.</div>
+</section>
+
+<section class="slide quote bg-signature-light">
+  <div class="brand">Axmed</div><div class="page">4/6</div>
+  <div class="eyebrow">From the delivery room</div>
+  <blockquote>"We call it the miracle drug."</blockquote>
+  <cite>[NAME], midwife, [FACILITY] — on heat-stable carbetocin</cite>
+</section>
+
+<section class="slide stat bg-routes-light">
+  <div class="brand">Axmed</div><div class="page">5/6</div>
+  <div class="eyebrow">Care starts long before the delivery room</div>
+  <div class="num">3.4<span class="accent">M</span></div>
+  <p class="lead">calibrated drapes confirmed for buyers in 6 countries — one route for the whole bundle.</p>
+  <div class="source">Source: Axmed marketplace data, Nov 2026. [Pending fact-sheet sign-off]</div>
+</section>
+
+<section class="slide cta bg-supergraphic">
+  <div class="brand">Axmed</div><div class="page">6/6</div>
+  <div class="eyebrow">Plan your 2027 procurement</div>
+  <h2>Send us your 2027 list.</h2>
+  <p class="lead">We'll show you how simple upstream can be. Offer within 48 hours.</p>
+  <div><span class="btn">axmed.com</span></div>
+</section>
+
+</body>
+</html>

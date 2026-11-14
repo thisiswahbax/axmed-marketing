@@ -1,0 +1,12 @@
+{
+  "name": "axmed-marketing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "carousel": "node scripts/render-carousel.mjs",
+    "utm": "node scripts/utm.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

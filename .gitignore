@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+node_modules/
+out/
+dist/
+*.mp4
+*.mov
+*.wav
+*.mp3
+.DS_Store
+# heavy renders live in shared drive, not git
+content/**/renders/
+brand/patterns/*.png

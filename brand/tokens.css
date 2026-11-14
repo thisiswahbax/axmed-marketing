@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Sans:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap");
+:root {
+  --ax-indigo: #261C7A; --ax-indigo-deep: #1C1560; --ax-indigo-soft: #EDEBFA;
+  --ax-cyan: #0CC4FF; --ax-cyan-soft: #E6F8FF;
+  --ax-ink: #24283E; --ax-muted: #5C657D; --ax-grey: #8A92A6; --ax-grey-soft: #EEF1F6;
+  --ax-canvas: #F7F9FD; --ax-line: #DFE5F0; --ax-white: #FFFFFF;
+  --ax-amber: #9A5B00; --ax-amber-soft: #FFF4DF;
+  --ax-font-display: "Instrument Sans", system-ui, sans-serif;
+  --ax-font-body: "Inter", system-ui, sans-serif;
+  --ax-font-serif: "Instrument Serif", Georgia, serif;
+  --ax-shadow: 0 24px 60px -24px rgba(38, 28, 122, .35);
+  --ax-radius: 24px;
+}

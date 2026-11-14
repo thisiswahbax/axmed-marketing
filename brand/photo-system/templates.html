@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Axmed photo-led post system (v2). Matches the team's Pinterest references:
+     full-bleed photo with one dominant hue, fine-line overlays, editorial serif + grotesk, frosted UI cards.
+     Photos: Pexels licence (see assets/photos/stock/README.md). Swap in real Axmed/partner photos when available.
+     .brand slots get the real Axmed logo at render time (scripts/render-carousel.mjs). -->
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #ddd; font-family: var(--ax-font-body); }
+  .slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; color: #fff; }
+  .slide > * { position: absolute; }
+  .photo { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* one-hue wash: grayscale photo, indigo multiply in shadows, cyan screen in highlights */
+  .mono .photo { filter: grayscale(1) contrast(1.08) brightness(1.05); }
+  .wash { inset: 0; mix-blend-mode: multiply; background: linear-gradient(170deg, #3b56c4 0%, #261C7A 60%, #1C1560 100%); }
+  .wash-teal { inset: 0; mix-blend-mode: multiply; background: linear-gradient(170deg, #2fb3d9 0%, #1f6aa8 55%, #261C7A 100%); }
+  .lift { inset: 0; mix-blend-mode: screen; background: radial-gradient(60% 50% at 60% 35%, rgba(12,196,255,.35), transparent 70%); }
+  .shade-b { left: 0; right: 0; bottom: 0; height: 55%; background: linear-gradient(to top, rgba(20,15,70,.85), transparent); }
+  .shade-t { left: 0; right: 0; top: 0; height: 40%; background: linear-gradient(to bottom, rgba(20,15,70,.6), transparent); }
+  .grain { inset: 0; opacity: .16; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>"); }
+  .brand { left: 72px; bottom: 64px; font: 700 30px var(--ax-font-display); letter-spacing: -.02em; color: #fff; }
+  .tag { right: 72px; bottom: 72px; font: 500 20px var(--ax-font-body); letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
+  .serif { font-family: var(--ax-font-serif); font-weight: 400; letter-spacing: -.01em; line-height: 1.02; }
+  .serif i { font-style: italic; }
+  .caps { font: 600 22px var(--ax-font-body); letter-spacing: .16em; text-transform: uppercase; }
+  .small { font: 400 26px/1.4 var(--ax-font-body); opacity: .85; }
+  .pill { font: 500 24px var(--ax-font-body); padding: 12px 24px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.75);
+    background: rgba(255,255,255,.08); backdrop-filter: blur(8px); white-space: nowrap; }
+  .pill.on { background: #0CC4FF; border-color: #0CC4FF; color: #1C1560; font-weight: 600; }
+  .dot { width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 8px rgba(255,255,255,.18); }
+  svg.lines { inset: 0; width: 100%; height: 100%; }
+  .glass { background: rgba(255,255,255,.72); backdrop-filter: blur(22px) saturate(1.3); border: 1px solid rgba(255,255,255,.8);
+    border-radius: 32px; box-shadow: 0 30px 80px -30px rgba(28,21,96,.55); color: var(--ax-ink); }
+  .light { background: var(--ax-canvas); color: var(--ax-indigo); }
+  .light .brand { color: var(--ax-indigo); }
+</style>
+</head>
+<body>
+
+<!-- T1 · MONO HUE — ref: "Zoom in." teal glove. Hand + product, one hue, tiny editorial copy -->
+<section class="slide mono dark">
+  <img class="photo" src="../../assets/photos/stock/pexels-6823561.jpg" style="object-position: 62% 50%">
+  <div class="wash" style="opacity:.8"></div><div class="lift"></div><div class="grain"></div>
+  <div class="caps" style="right:72px; top:96px; text-align:right; font-size:34px; letter-spacing:.12em">One route.<br>Every vial.</div>
+  <div class="small" style="right:72px; top:210px; width:360px; text-align:right; font-size:22px">The full PPH bundle, quoted by AI,<br>checked by QA, tracked to every site.</div>
+  <div class="brand">Axmed</div><div class="tag">Every birth.</div>
+</section>
+
+<!-- T2 · HAND + CIRCLE — ref: "Not All Probiotics Are Created Equal." Serif headline, thin circle on the product -->
+<section class="slide dark">
+  <img class="photo" src="../../assets/photos/stock/pexels-9894219.jpg" style="object-position: 50% 60%; filter: saturate(.8) brightness(.92)">
+  <div class="shade-t"></div><div class="shade-b" style="height:22%; opacity:.8"></div><div class="grain"></div>
+  <div class="serif" style="left:0; right:0; top:110px; text-align:center; font-size:82px; color:#fff">Not every <i>route</i><br>is created equal.</div>
+  <svg class="lines" viewBox="0 0 1080 1350"><circle cx="540" cy="860" r="300" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2"/>
+    <line x1="540" y1="560" x2="540" y2="520" stroke="#0CC4FF" stroke-width="6" stroke-linecap="round"/></svg>
+  <div class="brand">Axmed</div><div class="tag" style="opacity:.9">QA on every quote →</div>
+</section>
+
+<!-- T3 · LABELS + CONNECTORS — ref: "Find it before you feel it." Portrait with dotted connectors to capability pills -->
+<section class="slide mono dark">
+  <img class="photo" src="../../assets/photos/stock/pexels-5722166.jpg" style="object-position: 50% 20%">
+  <div class="wash" style="opacity:.92"></div><div class="lift"></div><div class="shade-b"></div><div class="grain"></div>
+  <div class="serif" style="left:72px; right:72px; top:96px; font-size:76px; text-align:center">Care starts long <i>before</i><br>the delivery room.</div>
+  <svg class="lines" viewBox="0 0 1080 1350" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" opacity=".9">
+    <path d="M560 760 C 470 720, 360 700, 300 640"/><path d="M600 900 C 700 880, 780 840, 820 790"/><path d="M520 1010 C 430 1040, 330 1060, 280 1080"/>
+  </svg>
+  <div class="dot" style="left:551px; top:751px"></div><div class="dot" style="left:591px; top:891px"></div><div class="dot" style="left:511px; top:1001px"></div>
+  <div class="pill" style="left:96px; top:600px">AI-driven quote</div>
+  <div class="pill on" style="left:690px; top:742px">QA checked</div>
+  <div class="pill" style="left:72px; top:1058px">3D live tracking</div>
+  <div class="small" style="left:72px; bottom:150px; width:560px; font-size:22px">Every life saved at birth starts with a product that was there on time.</div>
+  <div class="brand">Axmed</div><div class="tag">Every birth.</div>
+</section>
+
+<!-- T4 · BIG NUMBERS ON BLUR — ref: "Of the average 121-minute doctor visit" -->
+<section class="slide dark">
+  <img class="photo" src="../../assets/photos/stock/pexels-37912780.jpg" style="filter: blur(26px) saturate(.6) brightness(.8); transform: scale(1.15)">
+  <div class="wash" style="opacity:.85"></div><div class="grain" style="opacity:.22"></div>
+  <div class="serif" style="left:72px; top:110px; width:420px; font-size:60px">Care in<br><i>numbers.</i></div>
+  <div style="right:72px; top:110px; width:430px; display:grid; gap:44px">
+    <div><div style="font:600 150px/0.9 var(--ax-font-display); letter-spacing:-.04em">3.4M</div><div class="small" style="font-size:24px">calibrated drapes confirmed</div></div>
+    <div><div style="font:600 150px/0.9 var(--ax-font-display); letter-spacing:-.04em">24</div><div class="small" style="font-size:24px">buyers supplied in MNCH</div></div>
+    <div><div style="font:600 150px/0.9 var(--ax-font-display); letter-spacing:-.04em; color:#0CC4FF">13</div><div class="small" style="font-size:24px">countries, one route</div></div>
+  </div>
+  <div class="small" style="left:72px; bottom:130px; width:600px; font-size:18px; opacity:.6">Axmed marketplace data, Nov 2026. [Pending fact-sheet sign-off]</div>
+  <div class="brand">Axmed</div>
+</section>
+
+<!-- T5 · PORTRAIT + GLASS UI — ref: calendar card / "Obstetra" posts. Shows the platform as enabler -->
+<section class="slide dark">
+  <img class="photo" src="../../assets/photos/stock/pexels-5430213.jpg" style="object-position: 50% 15%">
+  <div class="shade-t" style="height:30%"></div><div class="grain" style="opacity:.1"></div>
+  <div class="serif" style="left:72px; top:96px; font-size:72px; width:600px">Her shelf,<br><i>never empty.</i></div>
+  <div class="glass" style="left:96px; right:96px; bottom:150px; padding:34px 40px">
+    <div style="display:flex; justify-content:space-between; align-items:center">
+      <div class="caps" style="font-size:18px; color:var(--ax-muted)">Order PO-2026-0418 · PPH bundle</div>
+      <div style="font:600 20px var(--ax-font-body); color:#1C1560; background:#E6F8FF; padding:8px 16px; border-radius:999px">● Live tracking</div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:26px">
+      <div><div style="height:8px; border-radius:8px; background:#261C7A"></div><div style="font:600 21px var(--ax-font-body); margin-top:12px">Quoted</div><div style="font-size:17px; color:var(--ax-muted)">AI · 6 suppliers</div></div>
+      <div><div style="height:8px; border-radius:8px; background:#261C7A"></div><div style="font:600 21px var(--ax-font-body); margin-top:12px">QA passed</div><div style="font-size:17px; color:var(--ax-muted)">QA &amp; compliance</div></div>
+      <div><div style="height:8px; border-radius:8px; background:#0CC4FF"></div><div style="font:600 21px var(--ax-font-body); margin-top:12px">In transit</div><div style="font-size:17px; color:var(--ax-muted)">4 sites</div></div>
+      <div><div style="height:8px; border-radius:8px; background:#DFE5F0"></div><div style="font:600 21px var(--ax-font-body); margin-top:12px; color:var(--ax-grey)">Delivered</div><div style="font-size:17px; color:var(--ax-muted)">ETA 12 Dec</div></div>
+    </div>
+  </div>
+  <div class="brand">Axmed</div><div class="tag" style="font-size:16px; opacity:.6">Illustrative interface</div>
+</section>
+
+<!-- T6 · HUGE TYPE + CROPPED PHOTO — ref: "Did you know?" / "Never Wait to Treat Pain" -->
+<section class="slide light">
+  <div style="left:72px; top:90px; font:700 168px/0.88 var(--ax-font-display); letter-spacing:-.05em; color:var(--ax-indigo)">Every<br>birth<span style="color:#0CC4FF">.</span></div>
+  <div class="small" style="left:72px; top:440px; width:420px; color:var(--ax-ink); opacity:1; font-size:26px">Every birth deserves the full PPH bundle <i class="serif" style="font-size:32px">on the shelf.</i> Getting it there on time is the work of procurers.</div>
+  <div style="right:0; bottom:0; width:640px; height:880px; border-top-left-radius:320px; overflow:hidden">
+    <img src="../../assets/photos/stock/pexels-19131211.jpg" style="width:100%; height:100%; object-fit:cover; object-position:50% 20%">
+  </div>
+  <svg class="lines" viewBox="0 0 1080 1350" fill="none"><path d="M100 1180 L 300 630" stroke="#0CC4FF" stroke-width="10" stroke-linecap="round"/></svg>
+  <div class="brand">Axmed</div>
+</section>
+
+<!-- T7 · TEAM / WAREHOUSE — editorial wide crop, the downstream work celebrated -->
+<section class="slide mono dark">
+  <img class="photo" src="../../assets/photos/stock/pexels-30677591.jpg" style="object-position: 62% 50%">
+  <div class="wash-teal" style="opacity:.95"></div><div class="lift"></div><div class="shade-b"></div><div class="grain"></div>
+  <div class="caps" style="left:72px; top:96px; font-size:20px; opacity:.85">The upstream, made simple</div>
+  <div class="serif" style="left:72px; bottom:170px; width:900px; font-size:88px">The hardest work<br>in healthcare <i>deserves</i><br>the simplest buying.</div>
+  <div class="brand">Axmed</div><div class="tag">Send us your 2027 list →</div>
+</section>
+
+<!-- T8 · CTA — indigo field, serif, single photo chip -->
+<section class="slide dark" style="background:linear-gradient(160deg,#261C7A,#1C1560)">
+  <div class="grain" style="opacity:.2"></div>
+  <div style="left:72px; top:110px; width:220px; height:220px; border-radius:50%; overflow:hidden; border:2px solid rgba(255,255,255,.6)">
+    <img src="../../assets/photos/stock/pexels-29941468.jpg" style="width:100%; height:100%; object-fit:cover; object-position:30% 30%">
+  </div>
+  <div class="serif" style="left:72px; top:420px; width:900px; font-size:104px">Send us your<br><i>2027 list.</i></div>
+  <div class="small" style="left:72px; top:680px; width:700px; font-size:30px">We'll show you how simple upstream can be. Offer within 48 hours.</div>
+  <div class="pill on" style="left:72px; top:820px; font-size:28px; padding:20px 36px">axmed.com/benchmark</div>
+  <div class="brand">Axmed</div><div class="tag">Every birth.</div>
+</section>
+
+</body>
+</html>
