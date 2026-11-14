@@ -70,6 +70,13 @@ from `strategy/campaigns/01-every-birth/asset-plan.md`.
   email-sequence, launch-strategy, marketing-psychology, product-marketing-context.
 - **Anthropic document-skills**: pptx, docx, pdf, xlsx for one-pagers and decks.
 
+## Anti-slop (Hallmark)
+
+Every visual and web page follows the Hallmark floor (`.claude/skills/hallmark`, by Together AI): no eyebrows, no tracked-capital labels, no single italic word in a heading, no middle-dot strings or decorative dots, no gradients across hues, no drawn browser windows, no card inside a card, no invented numbers or quotes, every colour and font from `brand/system.css` tokens.
+Build assets with `python3 scripts/build-assets.py`, render with `./scripts/render-all.sh`, then lint:
+`node .claude/skills/hallmark/scripts/sloplint.mjs brand/system.css <file.html> --genre modern-minimal` and fix every FAIL before handing over.
+Photos: never pick from Pexels, Unsplash or Pixabay (their terms bar AI tools from choosing images). Use Axmed's own consented photos (`assets/photos/real/`) or Hallmark's Wikimedia library, credited. Where a person belongs and no real photo exists, leave a slot.
+
 ## Review before handing over
 
 Run the `brand-reviewer` subagent (`.claude/agents/brand-reviewer.md`) on every finished asset and

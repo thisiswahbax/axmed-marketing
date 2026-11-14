@@ -1,3 +1,5 @@
+> ⚠️ **Retired 14 Nov 2026.** Pexels' terms bar AI tools from picking their images, so these files are no longer used in any asset. Kept for reference only; replace with Axmed's own photos.
+
 # Stock photos (placeholders until real Axmed/partner photos exist)
 
 These are from Pexels (free licence: commercial use OK, no attribution required; you may not sell them unaltered or imply endorsement).

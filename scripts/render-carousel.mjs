@@ -26,7 +26,7 @@ const logoIndigo = fs.readFileSync(path.join(root, "brand/logo/axmed-logo.svg"),
 await page.evaluate(({ light, dark }) => {
   document.querySelectorAll(".brand").forEach((el) => {
     const s = el.closest(".slide");
-    const onDark = s && [...s.classList].some((c) => ["cover", "cta", "dark"].includes(c) || c.startsWith("bg-") && !c.endsWith("-light"));
+    const onDark = s && [...s.classList].some((c) => ["cover", "cta", "dark", "field"].includes(c) || c.startsWith("bg-") && !c.endsWith("-light"));
     el.innerHTML = onDark ? dark : light;
   });
 }, { light: logoIndigo, dark: logoWhite });
