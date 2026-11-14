@@ -53,3 +53,30 @@
   addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(zoom); }, { passive: true });
   zoom();
 })();
+
+/* how it works: steps follow scroll while the section is pinned (wide screens); click or hover also picks a step */
+(function () {
+  var sec = document.querySelector('.hw'); if (!sec) return;
+  function panelOn() { return sec.querySelector('.panel:not([hidden])') || sec.querySelector('.panel'); }
+  function set(panel, k) {
+    panel.querySelectorAll('.hw-item').forEach(function (b) { var on = +b.dataset.k === k; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+    panel.querySelectorAll('.hw-art .art').forEach(function (a) { a.classList.toggle('on', +a.dataset.k === k); });
+  }
+  var hold = 0;
+  sec.querySelectorAll('.hw-item').forEach(function (b) {
+    b.addEventListener('click', function () { hold = performance.now(); set(b.closest('.panel'), +b.dataset.k); });
+  });
+  var wide = matchMedia('(min-width: 961px)'), still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) return;
+  function arm() { document.documentElement.classList.toggle('hw-on', wide.matches); }
+  arm(); wide.addEventListener ? wide.addEventListener('change', arm) : wide.addListener(arm);
+  var raf = 0, last = -1;
+  function frame() {
+    raf = 0; if (!wide.matches || performance.now() - hold < 1500) return;
+    var r = sec.getBoundingClientRect(), run = r.height - innerHeight; if (run <= 0) return;
+    var p = Math.min(1, Math.max(0, -r.top / run)), k = Math.min(3, Math.floor(p * 4));
+    if (k !== last) { last = k; set(panelOn(), k); }
+  }
+  addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(frame); }, { passive: true });
+  sec.querySelectorAll('[role=tab]').forEach(function (t) { t.addEventListener('click', function () { last = -1; frame(); }); });
+})();
