@@ -111,7 +111,7 @@ blockquote footer { margin-top: 20px; font: 500 16px var(--body); color: var(--i
   .foot .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .stage .orbmove { left: 8px; top: -64px; }
 }
-@media (max-width: 560px) { .steps { grid-template-columns: minmax(0, 1fr); } .nav .end .hide-s { display: none; } section.band { padding-block: 72px; } }
+@media (max-width: 560px) { .steps { gap: 16px; } .step div { padding: 16px; } .step h3 { font-size: 17px; } .nav .end .hide-s { display: none; } section.band { padding-block: 72px; } }
 @media (prefers-reduced-motion: reduce) { .orbmove img.moving { display: none; } }
 
 .start .ui .row { font-size: 17px; padding: 14px 24px; } .start .ui .raw { font-size: 14px; }
@@ -136,7 +136,7 @@ blockquote footer { margin-top: 20px; font: 500 16px var(--body); color: var(--i
 .h3d h1 span, .h3d .h span, .h2 span { color: var(--indigo-quiet); }
 .h3d .scene p:not(.h) { font: 400 clamp(18px, 1.6vw, 22px)/1.5 var(--body); color: var(--ink-soft); margin: 24px 0 32px; max-width: 480px; }
 .h3d .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.h3d .hub { position: absolute; left: 0; top: 0; width: 96px; height: 96px; opacity: 0; z-index: 1; will-change: transform; }
+.h3d .hub { position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--indigo-app); box-shadow: 0 0 0 6px var(--cyan-halo), 0 0 0 14px var(--cyan-mist); opacity: 0; z-index: 1; will-change: transform; }
 .h3d .bar { position: absolute; left: 24px; right: 24px; bottom: 24px; height: 2px; background: var(--line); max-width: 1200px; margin-inline: auto; }
 .h3d .bar i { display: block; height: 100%; background: var(--indigo-app); transform-origin: left; transform: scaleX(0); }
 .h3d .ill { position: absolute; right: 24px; bottom: 40px; margin: 0; }
@@ -145,19 +145,38 @@ html:not(.h3d-on) .h3d .bar, html:not(.h3d-on) .h3d .hub, html:not(.h3d-on) .h3d
 @media (max-width: 760px) {
   .h3d .copy { align-items: end; padding-bottom: 72px; }
   .h3d .copy::before { content: ""; position: absolute; inset: 40% -24px 0; background: linear-gradient(transparent, var(--indigo-mist) 38%); z-index: -1; }
-  .h3d .hub { width: 64px; height: 64px; }
   .h3d .ill { bottom: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { .js.h3d-on .h3d { height: auto; } .h3d .pin { position: relative; } .h3d .scene { transition: none; } }
 
-.start { background: var(--paper); }
-.start .stage { margin-top: 48px; }
 
-/* people: notched photo cards (slots until real photos land) */
-.ppl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 56px; }
-.ppl figure { margin: 0; }
-.cut .ph .label { font-size: 17px; }
-.cut .ph { position: relative; aspect-ratio: 4 / 5; border-radius: 0; clip-path: polygon(0 0, 52% 0, 64% 10%, 100% 10%, 100% 100%, 0 100%); background: linear-gradient(160deg, var(--indigo-mist), var(--cyan-mist)); }
-.ppl figcaption { font: 400 17px/1.5 var(--body); color: var(--ink-soft); margin-top: 20px; }
-.ppl figcaption b { display: block; font: 600 20px var(--display); color: var(--ink); margin-bottom: 4px; }
-@media (max-width: 960px) { .ppl { grid-template-columns: minmax(0, 1fr); } .cut .ph { aspect-ratio: 4 / 3; } }
+/* photo split: a real moment beside the reason we exist */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--paper); }
+.split .shot { margin: 0; min-height: 640px; }
+.split .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.split .say { padding: clamp(48px, 7vw, 112px); display: grid; align-content: center; gap: 56px; }
+
+/* dot-matrix steps */
+.step canvas.dm { width: 100%; aspect-ratio: 1; display: block; }
+
+/* partner rail: large photo cards with a white title strip, quote beneath */
+.h2.c { text-align: center; margin-inline: auto; }
+.rail { display: grid; grid-auto-flow: column; grid-auto-columns: min(760px, 82vw); gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 56px max(24px, calc((100vw - 760px) / 2)) 8px; scrollbar-width: none; }
+.rail::-webkit-scrollbar { display: none; }
+.card { scroll-snap-align: center; }
+.card figure { position: relative; margin: 0; aspect-ratio: 16 / 10; overflow: clip; }
+.card figure img { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; display: block; }
+.card figcaption { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: var(--card); color: var(--ink); font: 600 clamp(24px, 3vw, 40px)/1.1 var(--display); letter-spacing: -.02em; padding: 8px 16px; }
+.card blockquote { border-left: 1px solid var(--line); margin: 24px 0 0; padding: 4px 0 0 32px; }
+.card blockquote p { font: 400 clamp(19px, 1.6vw, 22px)/1.5 var(--body); color: var(--ink-soft); }
+.card blockquote footer { margin-top: 16px; }
+.railnav { display: flex; gap: 12px; justify-content: center; margin-top: 32px; }
+.railnav button { padding: 12px 24px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); color: var(--ink); font: 500 16px var(--body); cursor: pointer; }
+.railnav button:hover { border-color: var(--indigo-app); }
+.railnav button:focus-visible, .rail:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+@media (max-width: 960px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .split .shot { min-height: 0; aspect-ratio: 4 / 3; }
+  .card figure { aspect-ratio: 4 / 5; }
+  .card figcaption { top: 24px; transform: none; }
+}
