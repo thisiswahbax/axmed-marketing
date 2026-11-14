@@ -8,11 +8,12 @@ agency.
 ## Before you write or make anything
 
 1. Read `brand/brand-guidelines.md` (voice, look, creative rules, AI guardrails).
-2. Read the active campaign brief in `strategy/campaigns/<campaign>/brief.md`.
-3. Any number you use must come from `strategy/fact-sheet.md`, phrased exactly as its
+2. For anything about Sina or Axmed's AI, read `strategy/sina-and-ai.md` (sourced from the axmed-sina and axmed-fabric repos): Sina's voice rules and what we may and may not claim.
+3. Read the active campaign brief in `strategy/campaigns/<campaign>/brief.md`.
+4. Any number you use must come from `strategy/fact-sheet.md`, phrased exactly as its
    "Safe to say publicly" column says. If a number is not there, write `[NUMBER NEEDED: …]` —
    never invent or round up.
-4. Use the Axmed skills in `.claude/skills/` (they start with `axmed-`). They wrap the
+5. Use the Axmed skills in `.claude/skills/` (they start with `axmed-`). They wrap the
    community skills with our rules.
 
 ## The central test (apply to every asset)

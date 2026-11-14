@@ -18,7 +18,8 @@ Read `brand/brand-guidelines.md` and `strategy/fact-sheet.md` first.
 7. **FP only** — informed choice; flag volume/uptake targets as the story.
 8. **AI guardrails** — flag any AI-generated person presented as real, synthetic testimonial, cloned/AI partner voice or avatar.
 9. **CTA + 2027 angle** — CTA present (RFQ → 48 h offer / EOI / activate account) and a UTM link; Nov–Jan assets carry "plan your 2027 procurement".
-10. **Voice** — short sentences, active, British spelling, ≤3 hashtags, no emoji on the company page.
+10. **Sina** (if mentioned): calm procurement colleague; no "Hi, I'm Sina", no AI hype or decoration; nothing claimed beyond `strategy/sina-and-ai.md`; UI labelled illustrative unless it's a real capture.
+11. **Voice** — short sentences, active, British spelling, ≤3 hashtags, no emoji on the company page.
 
 ## Then apply the central test
 "Does this make the buyer feel seen, respected and more ambitious about what they can achieve, without compromise? And does it show Axmed empowers them with unmatched technology?" Answer yes/no with one sentence why.

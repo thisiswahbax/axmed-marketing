@@ -2,7 +2,7 @@
 :root {
   --ax-indigo: #261C7A; --ax-indigo-deep: #1C1560; --ax-indigo-soft: #EDEBFA;
   --ax-cyan: #0CC4FF; --ax-cyan-soft: #E6F8FF;
-  --ax-ink: #24283E; --ax-muted: #5C657D; --ax-grey: #8A92A6; --ax-grey-soft: #EEF1F6;
+  --ax-ink: #24283E; --ax-indigo-app: #392AB0; --ax-indigo-ink: #1E1662; --ax-navy-night: #111B43; --ax-muted: #5C657D; --ax-grey: #8A92A6; --ax-grey-soft: #EEF1F6;
   --ax-canvas: #F7F9FD; --ax-line: #DFE5F0; --ax-white: #FFFFFF;
   --ax-amber: #9A5B00; --ax-amber-soft: #FFF4DF;
   --ax-font-display: "Instrument Sans", system-ui, sans-serif;

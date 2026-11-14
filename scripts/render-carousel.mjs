@@ -20,16 +20,16 @@ const page = await browser.newPage({ viewport: { width: W, height: H }, deviceSc
 await page.goto("file://" + path.resolve(input), { waitUntil: "networkidle" });
 // Always inject brand tokens, so slides render on-brand wherever the HTML lives
 await page.addStyleTag({ content: tokens + `:root{--w:${W}px;--h:${H}px}body{background:transparent}` });
-// Real Axmed mark + wordmark in every .brand slot (white mark on indigo slides)
-const markSvg = (main) => fs.readFileSync(path.join(root, "brand/logo/axmed-mark.svg"), "utf8").replaceAll('fill="#261C7A"', `fill="${main}"`);
-const lockup = (main) => `<span style="display:inline-flex;align-items:center;gap:14px"><span style="height:56px;display:inline-block">${markSvg(main).replace("<svg ", '<svg style="height:56px;width:auto" ')}</span>Axmed</span>`;
+// Official Axmed lockup (mark + wordmark, from the marketplace app) in every .brand slot
+const logoWhite = fs.readFileSync(path.join(root, "brand/logo/axmed-logo-white.svg"), "utf8").replace("<svg ", '<svg style="height:58px;width:auto;display:block" ');
+const logoIndigo = fs.readFileSync(path.join(root, "brand/logo/axmed-logo.svg"), "utf8").replace("<svg ", '<svg style="height:58px;width:auto;display:block" ');
 await page.evaluate(({ light, dark }) => {
   document.querySelectorAll(".brand").forEach((el) => {
     const s = el.closest(".slide");
     const onDark = s && [...s.classList].some((c) => ["cover", "cta", "dark"].includes(c) || c.startsWith("bg-") && !c.endsWith("-light"));
     el.innerHTML = onDark ? dark : light;
   });
-}, { light: lockup("#261C7A"), dark: lockup("#FFFFFF") });
+}, { light: logoIndigo, dark: logoWhite });
 // Brand pattern backgrounds: add class bg-<pattern> to any slide (e.g. bg-strands-dark, bg-supergraphic, bg-routes-light, bg-signature-dark)
 const pdir = path.join(root, "brand/patterns");
 const bgCss = fs.readdirSync(pdir).filter((f) => f.endsWith(`_${W}x${H}.svg`)).map((f) => {
