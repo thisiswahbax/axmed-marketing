@@ -1,5 +1,6 @@
 // Axmed dot-matrix engine: draws a shape as pixel dots on a construction grid, with motion.
 // Usage: AxDotMatrix(canvas, { shape: "shield", theme: "night", motion: true, seed: 3 })
+// Small icon beside a title: AxDotMatrix(canvas, { shape: "list", theme: "paper", icon: true, cells: 22 })
 // Motion: dots assemble, then a soft scan passes and a few dots glint. prefers-reduced-motion = a still frame.
 (function () {
   const THEMES = {
@@ -39,6 +40,7 @@
     const still = opt.motion === false || matchMedia("(prefers-reduced-motion: reduce)").matches;
     const ease = t => 1 - Math.pow(1 - Math.min(Math.max(t, 0), 1), 3);
     function grid() {
+      if (opt.icon) { ctx.clearRect(0, 0, W, H); return; }   // icon mode: transparent, no construction grid
       ctx.fillStyle = th.bg; ctx.fillRect(0, 0, W, H);
       ctx.strokeStyle = th.grid; ctx.lineWidth = 1; const step = g * 8;
       for (let x = step / 2; x < W; x += step) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
