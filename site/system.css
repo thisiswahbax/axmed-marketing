@@ -20,6 +20,13 @@
   --ink-soft: #475067;
   --ink-quiet: #5F667B;
   --indigo-quiet: #6A61AE;
+  /* motion (Emil Kowalski's values): enter/exit on --ease-out, on-screen moves on --ease-in-out */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-press: 160ms;
+  --dur-ui: 220ms;
+  --dur-swap: 320ms;
+  --dur-scene: 640ms;
   --line: #E6E8EF;
   --line-warm: #E7E4DE;
   --ok: #067647;
@@ -128,8 +135,9 @@ body { background: var(--paper-warm); font-family: var(--body); color: var(--ink
 /* states: the slides are static images, but the system is reused on the web */
 a:focus-visible, button:focus-visible, .cta:focus-visible, .opt:focus-visible, .go:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; transition: none; }
 .cta:hover, .opt:hover, .go:hover { filter: brightness(.96); }
-.cta:active, .opt:active, .go:active { transform: translateY(1px); }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+.cta, .opt, .go { transition: transform var(--dur-press) var(--ease-out), filter var(--dur-ui) ease; }
+.cta:active, .opt:active, .go:active { transform: scale(.97); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-property: opacity, color, background-color, border-color !important; animation: none !important; } }
 
 /* atmosphere: blurred tonal fields with grain (brand/backgrounds), content always on top */
 .atmo { inset: 0; width: 100%; height: 100%; object-fit: cover; }

@@ -218,4 +218,6 @@
   window.h3dAt = function (v) { prog = v; frame(); };
   resize();
   kick();
+  // let the first frame paint, then play the opening scene (lead first, support follows)
+  requestAnimationFrame(function () { requestAnimationFrame(function () { document.documentElement.classList.add('ready'); }); });
 })();

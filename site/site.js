@@ -10,8 +10,18 @@
   }
   // buyers / suppliers tabs
   var tabs = document.querySelectorAll('[role=tab]');
+  var current = null;
   function show(t) {
-    tabs.forEach(function (x) { var on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    var from = current ? ([].indexOf.call(tabs, t) > [].indexOf.call(tabs, current) ? 1 : -1) : 0;
+    tabs.forEach(function (x) {
+      var on = x === t, panel = document.getElementById(x.getAttribute('aria-controls'));
+      x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; panel.hidden = !on;
+      if (on && from && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        panel.style.setProperty('--from', from); panel.classList.add('enter');
+        panel.getBoundingClientRect(); panel.classList.remove('enter');   // arrive from the side of the tab you pressed
+      }
+    });
+    current = t;
   }
   tabs.forEach(function (t, i) {
     t.addEventListener('click', function () { show(t); });
@@ -35,7 +45,7 @@
   var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   sec.querySelectorAll('.dotfig').forEach(function (f) {
     var n = +f.dataset.n, box = f.querySelector('.dots'), html = '';
-    for (var i = 0; i < 100; i++) html += '<i class="' + (i < n ? 'lit' : '') + '" style="--d:' + (i * 14) + 'ms"></i>';
+    for (var i = 0; i < 100; i++) html += '<i class="' + (i < n ? 'lit' : '') + '" style="--d:' + Math.round(1100 * Math.sqrt(i / 100)) + 'ms"></i>';
     box.innerHTML = html;
   });
   function count(el) {

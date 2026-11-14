@@ -8,12 +8,13 @@
   var stage = root.querySelector('.sx-stage'), nodes = [].slice.call(root.querySelectorAll('.sx-node')),
       cards = [].slice.call(root.querySelectorAll('.sx-card')), steps = root.querySelectorAll('.sx-steps li'),
       rail = root.querySelector('.sx-rail i'), canvas = root.querySelector('.sx-orb'),
+      coreEl = root.querySelector('.sx-core'), hiEl = root.querySelector('.sx-hi'), glow = root.querySelector('.sx-ring.r3'),
       svg = root.querySelector('.sx-svg'), links = svg.querySelector('.links'), orbit = svg.querySelector('.orbit'), inner = svg.querySelector('.inner');
   var NS = 'http://www.w3.org/2000/svg', lines = nodes.map(function () { var l = document.createElementNS(NS, 'line'); l.setAttribute('pathLength', '1'); links.appendChild(l); return l; });
   var orb = null;
   try { if (window.createSinaOrb) { orb = createSinaOrb(canvas); if (canvas.dataset.error) orb = null; } } catch (e) { orb = null; }
   root.classList.toggle('live', !!orb);
-  var A = .22, L = .19;                                    // intro until A, then four stages of L
+  var A = .34, L = .165;                                   // intro (grow, greet, connect) until A, then four stages of L
   var ABSORB = { 0: 0, 5: 1 };                             // Excel flows in at stage 0, the catalogue at stage 1
   var STATE = ['listening', 'working', 'speaking', 'idle'];
   function c01(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
@@ -26,14 +27,18 @@
     var s = p < A ? -1 : Math.min(3, Math.floor((p - A) / L)), t = s < 0 ? 0 : (p - A - s * L) / L;
     var rot = -90 + p * 120;
     // intro: Sina grows from a point, the orbit draws in, formats arrive one by one and connect
-    var grow = ease(p / .1), ring = ease((p - .05) / .08);
-    root.style.setProperty('--grow', (.25 + .75 * grow).toFixed(3));
-    orbit.style.strokeDashoffset = (1 - ring).toFixed(3); inner.style.strokeDashoffset = (1 - ease((p - .03) / .07)).toFixed(3);
-    stage.style.setProperty('--spin', (p * 120) + 'deg');
+    var grow = ease(p / .07), ring = ease((p - .17) / .07);
+    // greeting: rises in as Sina reaches full size, holds, then clears before the orbit draws
+    var hiIn = ease((p - .05) / .05), hiOut = ease((p - .15) / .04), hi = hiIn * (1 - hiOut);
+    hiEl.style.opacity = hi.toFixed(3);
+    hiEl.style.transform = 'translate(-50%, ' + ((1 - hiIn) * 14 - hiOut * 8).toFixed(1) + 'px)';
+    hiEl.style.filter = hi < .98 ? 'blur(' + ((1 - hi) * 2).toFixed(2) + 'px)' : 'none';
+    var g = .25 + .75 * grow;
+    orbit.style.strokeDashoffset = (1 - ring).toFixed(3); inner.style.strokeDashoffset = (1 - ease((p - .16) / .06)).toFixed(3);
     nodes.forEach(function (n, i) {
       var a = (rot + i * 60) * Math.PI / 180, x = Math.cos(a) * R, y = Math.sin(a) * R, f = 0;
       if (i in ABSORB) f = ease((p - (A + ABSORB[i] * L)) / (L * .32));
-      var appear = ease((p - .1 - i * .016) / .04), link = ease((p - .12 - i * .016) / .04);
+      var appear = ease((p - .21 - i * .014) / .035), link = ease((p - .225 - i * .014) / .035);
       var lx = x * 100 / R, ly = y * 100 / R, ln = lines[i];
       ln.setAttribute('x1', (lx * .36).toFixed(2)); ln.setAttribute('y1', (ly * .36).toFixed(2));
       ln.setAttribute('x2', (lx * (1 - f) * .86 + lx * f * .36).toFixed(2)); ln.setAttribute('y2', (ly * (1 - f) * .86 + ly * f * .36).toFixed(2));
@@ -52,9 +57,10 @@
       c.style.opacity = (e * (1 - x)).toFixed(3);
     });
     var core = (s >= 0 && t > .2 && t < .6) ? 1 : 0;
-    root.style.setProperty('--pulse', core);
-    if (s !== lastS) { lastS = s; steps.forEach(function (li, k) { li.classList.toggle('on', k === Math.max(0, s)); li.classList.toggle('past', k < s); }); }
-    var st = s < 0 ? 'idle' : (s === 0 && t < .3 ? 'listening' : STATE[s]);
+    coreEl.style.transform = 'translate(-50%,-50%) scale(' + (g * (1 + core * .06)).toFixed(3) + ')';
+    glow.style.opacity = (.5 + core * .5);
+    if (s !== lastS) { lastS = s; steps.forEach(function (li, k) { li.classList.toggle('on', k === s); li.classList.toggle('past', k < s); }); }
+    var st = s < 0 ? (hi > .2 ? 'speaking' : 'idle') : (s === 0 && t < .3 ? 'listening' : STATE[s]);
     if (orb && st !== lastState) { orb.setState(st); lastState = st; }
     if (rail) rail.style.transform = 'scaleY(' + p.toFixed(3) + ')';
   }
