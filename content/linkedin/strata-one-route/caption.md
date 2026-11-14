@@ -1,11 +1,11 @@
-# LinkedIn post: "Many lists. One route."
+# LinkedIn post: "Health systems buy better together."
 
-**Format:** video post (6 s loop, 1080×1350), `post.mp4` · still fallback `post.jpg`
+**Format:** video post (8 s, 1080×1350: moving strata, headline builds word by word, then the line and the logo), `post.mp4` · still fallback `post.jpg`
 **Channel:** Axmed company page · **Asset:** brand, always-on
 
 ## Caption
 
-Many lists. One route.
+Health systems buy better together.
 
 A district hospital orders on its own. So does the ministry, and so does the NGO down the road. Each list on its own is too small for suppliers to compete for.
 
@@ -18,7 +18,7 @@ Planning your 2027 procurement? Send us your list as it is.
 
 ## Alt text
 
-Layers of indigo, lilac and cyan settle into one landscape. Headline: Many lists. One route. Axmed logo.
+Layers of indigo, lilac and cyan settle into one landscape. Headline: Health systems buy better together. Axmed pools orders from hospitals, ministries and NGOs, so suppliers compete to serve them. Axmed logo.
 
 ## Notes
 
