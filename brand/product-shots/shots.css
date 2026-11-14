@@ -2,11 +2,14 @@
 /* Premium product-shot system: Sina orb light, glass cards, real-feeling UI. Paths relative to this file. */
 .ps { font-family: "Figtree", "Avenir Next", system-ui, sans-serif; }
 .ps-night { background: radial-gradient(120% 80% at 50% 0%, #2A1F8F 0%, #1C1560 45%, #0D0A33 100%); }
-.ps-paper { background: radial-gradient(120% 90% at 70% 10%, #FFFFFF 0%, #F3F4FA 55%, #E9EBF5 100%); }
+.ps-paper { background:
+  radial-gradient(55% 40% at 12% 48%, rgba(57,42,176,.10), transparent 70%),
+  radial-gradient(50% 38% at 92% 88%, rgba(12,196,255,.12), transparent 72%),
+  linear-gradient(180deg, #F8F7FC 0%, #F5F7FB 60%, #F3F7FB 100%); }
 .orb-glow { position:absolute; border-radius:50%; background:url("../sina/sina-orb-4.png") center/cover; filter: blur(70px) saturate(1.4); opacity:.75; }
-.orb-glow.soft { opacity:.35; filter: blur(90px) saturate(1.2); }
+.orb-glow.soft { background: radial-gradient(circle, rgba(12,196,255,.30) 0%, rgba(90,71,235,.16) 38%, rgba(243,240,255,0) 68%); filter: blur(24px); opacity:1; }
 .orb { position:absolute; border-radius:50%; background:url("../sina/sina-orb-1.png") center/cover;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.18) inset, 0 20px 60px -10px rgba(12,196,255,.45), 0 0 120px rgba(12,196,255,.25); }
+  box-shadow: 0 0 0 1px rgba(255,255,255,.35) inset, 0 28px 60px -22px rgba(30,22,98,.55), 0 0 90px -10px rgba(12,196,255,.35); }
 .orb.o3 { background-image:url("../sina/sina-orb-3.png"); } .orb.o4 { background-image:url("../sina/sina-orb-4.png"); } .orb.o5 { background-image:url("../sina/sina-orb-5.png"); }
 .orb::after { content:""; position:absolute; inset:0; border-radius:50%; background: radial-gradient(60% 45% at 32% 25%, rgba(255,255,255,.35), transparent 60%); mix-blend-mode: screen; }
 .ps-grain { position:absolute; inset:0; opacity:.12; mix-blend-mode:overlay; pointer-events:none;
@@ -17,9 +20,9 @@
 /* glass-edged card */
 .card { position:relative; border-radius:30px; background: linear-gradient(180deg,#FFFFFF 0%, #FBFBFE 100%);
   box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 0 0 1px rgba(38,28,122,.06), 0 2px 6px rgba(13,10,51,.06),
-              0 40px 80px -24px rgba(13,10,51,.55), 0 90px 140px -60px rgba(12,196,255,.35); }
+              0 40px 80px -30px rgba(30,22,98,.35), 0 80px 120px -70px rgba(12,196,255,.30); }
 .card::before { content:""; position:absolute; inset:-1.5px; border-radius:31.5px; padding:1.5px; pointer-events:none;
-  background: linear-gradient(135deg, rgba(12,196,255,.9), rgba(255,255,255,.2) 35%, rgba(255,255,255,0) 60%, rgba(57,42,176,.5));
+  background: linear-gradient(135deg, rgba(12,196,255,.45), rgba(255,255,255,0) 40%, rgba(255,255,255,0) 70%, rgba(57,42,176,.18));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
 .card.ghost { background: rgba(255,255,255,.55); box-shadow: 0 30px 60px -30px rgba(13,10,51,.5); }
 .card.ghost::before { display:none; }
