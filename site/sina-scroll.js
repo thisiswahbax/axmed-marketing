@@ -3,7 +3,12 @@
    Reduced motion or no JS: the copy and all four cards sit still. */
 (function () {
   var root = document.querySelector('.sx');
-  if (!root || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!root) return;
+  // the six formats are dot-matrix icons (dm/dotmatrix.js). Scroll drives their assembly; reduced motion draws them still.
+  var icons = [].map.call(root.querySelectorAll('.sx-node .fmt'), function (c, i) {
+    return window.AxDotMatrix ? AxDotMatrix(c, { shape: c.dataset.shape, theme: 'indigo', icon: true, cells: 28, seed: 3 + i, manual: true }) : null;
+  }), iconT = icons.map(function () { return -1; });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.documentElement.classList.add('sx-on');
   var stage = root.querySelector('.sx-stage'), nodes = [].slice.call(root.querySelectorAll('.sx-node')),
       cards = [].slice.call(root.querySelectorAll('.sx-card')), steps = root.querySelectorAll('.sx-steps li'),
@@ -48,6 +53,8 @@
       n.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) translate(-50%,-50%) scale(' + ((1 - f * .7) * (.4 + .6 * appear)).toFixed(3) + ')';
       n.style.opacity = ((1 - f * f) * appear).toFixed(3);
       n.classList.toggle('on', (i in ABSORB) && f > 0.02 && f < 1);
+      var it = Math.round(appear * 2.2 * 50) / 50;          // 2.2 s of engine time = fully assembled, before its scan starts
+      if (icons[i] && it !== iconT[i]) { iconT[i] = it; icons[i].drawAt(it); }
     });
     cards.forEach(function (c, k) {
       var fx = small ? 0 : (k % 2 ? 1 : -1) * (R + 120), fy = small ? R * .78 : (k < 2 ? -R * .12 : R * .12);

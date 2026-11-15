@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Axmed · Accelerating access to healthcare for all</title>
 <meta name="description" content="Hospitals, ministries and clinics in low- and middle-income countries buy quality-assured medicines through Axmed. Bring your order list and see the cost before you sign up.">
-<link rel="stylesheet" href="system.css"><link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="system.css?v=35"><link rel="stylesheet" href="site.css?v=35">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body class="site">
@@ -24,7 +24,7 @@
 <path d="M25.6887 13.0945C25.7593 13.4305 25.7807 13.6273 25.7187 13.8905L20.5471 29.3067C20.5471 29.3067 19.6912 32.9035 17.0573 33.0404C16.5417 33.0661 16.026 32.9463 15.5681 32.7088C14.9925 32.4114 14.2308 31.8251 13.8906 30.7253C13.8906 30.7253 16.2122 32.8821 17.3547 28.4552L24.223 7.13129L24.1824 6.9751C24.1824 6.9751 24.253 6.9751 24.2787 7.05855L25.6887 13.0945Z" fill="#261C7A"/>
 </svg>
 </a>
-  <nav aria-label="Main"><ul><li><a href="#buyers">Buyers</a></li><li><a href="#suppliers">Suppliers</a></li><li><a href="#sina">Sina</a></li><li><a href="#how">How it works</a></li><li><a href="#impact">Impact</a></li></ul></nav>
+  <nav aria-label="Main"><ul><li><a href="buyers.html">Buyers</a></li><li><a href="suppliers.html">Suppliers</a></li><li><a href="#sina">Sina</a></li><li><a href="#impact">Impact</a></li></ul></nav>
   <div class="end"><a class="hide-s" href="https://app.axmed.com/login">Access platform</a><a class="btn primary" href="#buyers">Get started</a></div>
 </div></header>
 
@@ -32,24 +32,22 @@
 <section class="h3d" id="top">
 <div class="pin">
   <canvas aria-hidden="true"></canvas>
-  <div class="hub" aria-hidden="true"></div>
   <div class="wrap copy">
     <div class="scene on">
       <h1>Accelerating access <span>to healthcare for all.</span></h1>
-      <p>Bring your order list. See the cost before you sign up.</p>
+      <p>Hospitals, medical stores and ministries across Africa buy quality-assured medicines through Axmed. Send your order list and see the cost before you sign up.</p>
       <div class="actions"><a class="btn primary big" href="/buy">I buy medicines</a><a class="btn ghost big" href="/sell">I supply medicines</a></div>
     </div>
     <div class="scene" aria-hidden="true">
-      <p class="h">Demand pooled. <span>Suppliers compete.</span></p>
-      <p>Orders from many buyers become one tender for quality-assured suppliers.</p>
+      <p class="h">We pool demand. <span>Suppliers compete for it.</span></p>
+      <p>We group orders from many buyers into one tender for quality-assured suppliers.</p>
     </div>
     <div class="scene" aria-hidden="true">
-      <p class="h">Delivered <span>where it’s needed most.</span></p>
-      <p>Hospitals, ministries and clinics across low- and middle-income countries.</p>
+      <p class="h">We deliver <span>to each site on your list.</span></p>
+      <p>Hospitals, stores and clinics in low- and middle-income countries.</p>
     </div>
   </div>
   <div class="bar" aria-hidden="true"><i></i></div>
-  <p class="note ill">Illustrative map.</p>
 </div>
 </section>
 
@@ -59,80 +57,148 @@
   <div><dt>Working with</dt><dd>LifeNet International, Joint Medical Store, MEDS Kenya, CHAN Nigeria</dd></div>
 </dl></div>
 
-<section class="split">
-  <figure class="shot"><img src="photos/delivery-health-centre.jpg" alt="A health worker receives cartons of medicines from a driver at a rural health centre." loading="lazy" width="896" height="1200"><figcaption>The last mile, delivered.</figcaption></figure>
+<section class="split" aria-labelledby="sp-h"><div class="wrap">
+  <figure class="shot">
+    <canvas class="sp-dots" data-src="photos/hospital-pharmacy.jpg" role="img" aria-label="A pharmacist in a bright, well-stocked hospital pharmacy checks a delivered carton against a tablet."></canvas>
+    <figcaption>Delivered, checked, on the shelf.</figcaption>
+  </figure>
   <div class="say">
-    <h2 class="h2">Where you are born <span>should not decide your healthcare.</span></h2>
-    <div class="gap2">
-      <div class="dotfig" data-n="80" data-of="people"><b><i data-to="80">80</i>%</b><div class="dots" aria-hidden="true"></div><span>of the world’s people live in low- and middle-income countries.</span></div>
-      <div class="dotfig accent" data-n="5" data-of="revenue"><b>&lt;<i data-to="6">6</i>%</b><div class="dots" aria-hidden="true"></div><span>of global medicine revenue comes from those same countries.</span></div>
+    <h2 class="h2" id="sp-h">Where you are born <span>should not decide your healthcare.</span></h2>
+    <div class="cmp">
+      <div class="dotfig" data-n="80"><div class="cmp-h"><b><i data-to="80">80</i>%</b><span>of the world’s people live in low- and middle-income countries.</span></div><div class="dots" aria-hidden="true"></div></div>
+      <div class="dotfig accent" data-n="5"><div class="cmp-h"><b>&lt;<i data-to="6">6</i>%</b><span>of global medicine revenue comes from those same countries.</span></div><div class="dots" aria-hidden="true"></div></div>
     </div>
+    <p class="cmp-so">Suppliers serve the markets that pay. <span>Axmed pools those buyers into orders worth serving.</span></p>
   </div>
+</div></section>
+
+<section class="mk" id="mark" aria-labelledby="mk-h" hidden><!-- parked for later: remove "hidden" to bring it back -->
+<div class="mk-pin">
+  <canvas aria-hidden="true"></canvas>
+  <div class="mk-lab" aria-hidden="true"><span class="a">Buyers</span><span class="b">Suppliers</span></div>
+  <div class="wrap mk-copy">
+    <div class="mk-s on"><h2 class="h2" id="mk-h">Two sides <span>of one supply chain.</span></h2><p>Buyers who need quality medicines. Suppliers who make them.</p></div>
+    <div class="mk-s"><p class="h2">Axmed is <span>the link.</span></p><p>We join them with pooled demand, quality checks and delivery.</p></div>
+    <div class="mk-s"><p class="h2">Our mark <span>draws that link.</span></p><p>Two ribbons for buyers and suppliers, joined in cyan.</p></div>
+  </div>
+</div>
 </section>
 
 
-
-
-
-
-
-
-
-
-
-<section class="hw" id="how"><div class="hw-pin"><div class="wrap">
-  <div class="hw-top"><h2 class="h2">How it works, <span>for each side.</span></h2>
-  <div class="tabs" role="tablist" aria-label="How it works">
-    <button type="button" role="tab" id="t-buy" aria-controls="buyers" aria-selected="true">For buyers</button>
-    <button type="button" role="tab" id="t-sell" aria-controls="suppliers" aria-selected="false">For suppliers</button>
-  </div></div>
-  <div class="panel" id="buyers" role="tabpanel" aria-labelledby="t-buy">
-    <div class="hw-grid"><div class="hw-art feat"><div class="art on" data-k="0" style="--wp:url(img/wp/indigo-haze.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="wh"><span class="fi">XLS</span><div><b>2027_MNCH_order.xlsx</b><small>18 lines read</small></div></div>
-<div class="bar"><i style="--w:100%"></i></div>
-<div class="ln"><code>Carbetocin HS 100mcg amp</code><span class="to"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1.5h4M7 1.5v2.5L5 7v7.5h6V7L9 4V1.5"/><path d="M5 10h6"/></svg>Carbetocin 100 mcg/mL</span><em class="ok">Matched</em></div>
-<div class="ln"><code>TXA 1g/10ml inj</code><span class="to"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1.5h4M7 1.5v2.5L5 7v7.5h6V7L9 4V1.5"/><path d="M5 10h6"/></svg>Tranexamic acid 100 mg/mL</span><em class="ok">Matched</em></div>
-<div class="ln"><code>Oxy 10IU amp</code><span class="to"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1.5h4M7 1.5v2.5L5 7v7.5h6V7L9 4V1.5"/><path d="M5 10h6"/></svg>Oxytocin 10 IU/mL</span><em class="ok">Matched</em></div>
-<div class="ln hi"><code>Miso 200 - 3 tabs ??</code><span class="to"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1.5h4M7 1.5v2.5L5 7v7.5h6V7L9 4V1.5"/><path d="M5 10h6"/></svg>Misoprostol 200 mcg</span><em class="ask">1 question</em></div></div>
-<div class="float f-bl"><div class="ring" style="--p:94"><span>17</span></div><div><b>17 of 18 matched</b><small>One question for you</small></div></div></div></div><div class="art" data-k="1" style="--wp:url(img/wp/cyan-deep.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="wh"><span class="fi v"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1.5h4M7 1.5v2.5L5 7v7.5h6V7L9 4V1.5"/><path d="M5 10h6"/></svg></span><div><b>Carbetocin 100 mcg/mL</b><small>40,000 ampoules, 6 quotes</small></div></div>
-<div class="th3"><span>Supplier</span><span>Quality</span><span>Landed cost</span></div>
-<div class="q best"><span>Supplier A</span><em class="tag">Prequalified</em><span class="cost"><i style="--w:62%"></i></span></div>
-<div class="q"><span>Supplier B</span><em class="tag">SRA approved</em><span class="cost"><i style="--w:70%"></i></span></div>
-<div class="q"><span>Supplier C</span><em class="tag">Prequalified</em><span class="cost"><i style="--w:78%"></i></span></div>
-<div class="q dim"><span>Supplier D</span><em class="tag">SRA approved</em><span class="cost"><i style="--w:86%"></i></span></div></div>
-<div class="float f-bl"><span class="badge"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg></span><div><b>Best landed cost</b><small>Supplier A, WHO prequalified</small></div></div></div></div><div class="art" data-k="2" style="--wp:url(img/wp/strata-light.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="wh"><div class="ring sm" style="--p:75"><span>3/4</span></div><div><b>Order PO-0418</b><small>Quality checks</small></div></div>
-<div class="ck2 done"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg><div><b>Supplier verified</b><small>Regulatory specialist sign-off</small></div></div>
-<div class="ck2 done"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg><div><b>Product qualified</b><small>Checked against the specification</small></div></div>
-<div class="ck2 done"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg><div><b>Registered in destination</b><small>National regulatory catalogue</small></div></div>
-<div class="ck2"><span class="dotp"></span><div><b>QC release</b><small>Certificate of analysis in review</small></div></div></div>
-<div class="float f-br"><div><small>Shelf life on arrival</small><b class="big2">86%</b><div class="bar ok"><i style="--w:86%"></i></div></div></div></div></div><div class="art" data-k="3" style="--wp:url(img/wp/strata-brand.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="map"><svg viewBox="0 0 320 110" preserveAspectRatio="none"><path class="route" d="M20 84 C 90 10, 150 20, 200 52 S 280 90, 304 30"/><circle class="n done" cx="20" cy="84" r="5"/><circle class="n done" cx="118" cy="30" r="5"/><circle class="n now" cx="200" cy="52" r="7"/><circle class="n" cx="304" cy="30" r="5"/></svg></div>
-<div class="wh"><div><b>PPH bundle</b><small>4 sites, 1 route</small></div></div>
-<div class="st2"><span>Central medical store</span><em class="ok">Delivered</em></div>
-<div class="st2"><span>District hospital</span><em class="tr">In transit</em></div>
-<div class="st2"><span>Health centre</span><em class="n">Scheduled</em></div></div>
-<div class="float f-tl"><span class="badge"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg></span><div><b>Delivered</b><small>Central medical store</small></div></div></div></div></div><ol class="hw-list"><li><button type="button" class="hw-item on" data-k="0" aria-pressed="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v14A1.5 1.5 0 0 1 17 20.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5z"/><path d="M8.5 8h7M8.5 11.5h7M8.5 15h3"/><path class="a" d="m13 15.5 1.6 1.6 3-3.2"/></svg><span class="t">Bring your list</span><span class="d">Excel, PDF or a message. Every line matched to a real product.</span></button></li><li><button type="button" class="hw-item" data-k="1" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20.5V12M10 20.5V8M15 20.5V10M20 20.5V5"/><path class="a" d="M3.5 20.5h17"/><circle class="a f" cx="5" cy="9.5" r="1.6"/></svg><span class="t">Compare quotes</span><span class="d">Qualified suppliers compete on your exact lines, per unit, delivered.</span></button></li><li><button type="button" class="hw-item" data-k="2" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19 6v5.6c0 4.4-3 7.7-7 9.2-4-1.5-7-4.8-7-9.2V6z"/><path class="a" d="m8.8 12.2 2.3 2.3 4.3-4.6"/></svg><span class="t">Checked before it ships</span><span class="d">Supplier, product and batch checks, with payment terms in the order.</span></button></li><li><button type="button" class="hw-item" data-k="3" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5c3.5 0 3-6 7-6s3.5-6 7-6"/><circle cx="5" cy="18.5" r="1.8"/><path class="a" d="M19 3.2a3 3 0 0 1 3 3c0 2.2-3 4.6-3 4.6s-3-2.4-3-4.6a3 3 0 0 1 3-3z"/><circle class="a f" cx="19" cy="6.3" r=".9"/></svg><span class="t">Tracked to every site</span><span class="d">One order, followed from dispatch to each facility on your list.</span></button></li></ol></div>
-    <div class="actions pa"><a class="btn primary big" href="/buy">Bring your list</a><a class="btn ghost big" href="https://www.axmed.com/contact">Book a demo</a></div>
+<section class="get" id="get" aria-labelledby="get-h"><div class="wrap">
+  <div class="get-top">
+    <h2 class="h2" id="get-h">What you get <span>with Axmed.</span></h2>
+    <div class="tabs" role="tablist" aria-label="What you get" data-side>
+      <button type="button" role="tab" id="g-buy" aria-controls="buyers" aria-selected="true" data-for="buy">For buyers</button>
+      <button type="button" role="tab" id="g-sell" aria-controls="suppliers" aria-selected="false" data-for="sell">For suppliers</button>
+    </div>
   </div>
-  <div class="panel" id="suppliers" role="tabpanel" aria-labelledby="t-sell">
-    <div class="hw-grid"><div class="hw-art feat"><div class="art on" data-k="0" style="--wp:url(img/wp/indigo-dusk.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="wh"><span class="fi v"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1.5h4M7 1.5v2.5L5 7v7.5h6V7L9 4V1.5"/><path d="M5 10h6"/></svg></span><div><b>Carbetocin 100 mcg/mL</b><small>Open tender</small></div></div>
-<div class="hero2"><b>40,000</b><small>ampoules, pooled</small></div>
-<div class="who"><span class="av"></span><span class="av b"></span><span class="av c"></span><span class="av">+3</span><small>6 buyers, 3 countries</small></div>
-<div class="bars"><i style="--h:40%"></i><i style="--h:65%"></i><i style="--h:30%"></i><i style="--h:85%"></i><i style="--h:55%"></i><i style="--h:70%"></i></div></div>
-<div class="float f-bl"><span class="badge cy">9</span><div><b>Closes in 9 days</b><small>Quote before it closes</small></div></div></div></div><div class="art" data-k="1" style="--wp:url(img/wp/lilac-mist.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="wh"><div><b>Your quote</b><small>Carbetocin 100 mcg/mL</small></div></div>
-<label class="fld"><small>Pack</small><span>100 × 1 mL ampoules</span></label>
-<label class="fld"><small>Lead time</small><span>8 weeks</span></label>
-<label class="fld"><small>Quality</small><span>WHO prequalified</span></label>
-<div class="btnx">Submit quote</div></div>
-<div class="float f-br"><span class="badge"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg></span><div><b>Sent to 6 buyers</b><small>One quote, one contract</small></div></div></div></div><div class="art" data-k="2" style="--wp:url(img/wp/cyan-mist.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="wh"><div><b>Supplier profile</b><small>Documents</small></div></div>
-<div class="doc"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L12.5 4.5v10h-8.5z"/><path d="M9.5 1.5v3h3"/></svg><div><b>GMP certificate</b><small>Uploaded 12 May</small></div><em class="ok">Approved</em></div>
-<div class="doc"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L12.5 4.5v10h-8.5z"/><path d="M9.5 1.5v3h3"/></svg><div><b>Product registration</b><small>Uploaded 12 May</small></div><em class="ok">Approved</em></div>
-<div class="doc"><svg class="g" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L12.5 4.5v10h-8.5z"/><path d="M9.5 1.5v3h3"/></svg><div><b>Certificate of analysis</b><small>Uploaded today</small></div><em class="n">In review</em></div></div>
-<div class="float f-bl"><div class="ring" style="--p:67"><span>2/3</span></div><div><b>QA review</b><small>Our team, with you</small></div></div></div></div><div class="art" data-k="3" style="--wp:url(img/wp/strata-warm.jpg)" aria-hidden="true"><div class="comp"><div class="win"><div class="wh"><div><b>PO-0418</b><small>Milestones</small></div></div>
-<ol class="tl"><li class="done"><b>Purchase order signed</b></li><li class="done"><b>Shipped</b></li><li class="done"><b>Delivery confirmed</b></li><li class="now"><b>Payment</b><small>Released</small></li></ol></div>
-<div class="float f-tr"><span class="badge"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg></span><div><b>Payment released</b><small>PO-0418</small></div></div></div></div></div><ol class="hw-list"><li><button type="button" class="hw-item on" data-k="0" aria-pressed="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="3.6" cy="12" r="1.6"/><path d="M7 6.8 13 11M7 17.2 13 13M5.2 12H13"/><circle class="a" cx="17" cy="12" r="4"/></svg><span class="t">See pooled demand</span><span class="d">Orders from many buyers, grouped into tenders worth serving.</span></button></li><li><button type="button" class="hw-item" data-k="1" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4"/><path d="M9 11h6M9 14h4"/><path class="a" d="m13.5 18 2.5-.5 4.5-4.5-2-2-4.5 4.5z"/></svg><span class="t">Quote once</span><span class="d">One quote reaches every buyer in the tender. One contract.</span></button></li><li><button type="button" class="hw-item" data-k="2" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.5" r="5.8"/><path d="m8.6 14.3-1.6 6.2 5-2.4 5 2.4-1.6-6.2"/><path class="a" d="m9.6 9.6 1.7 1.7 3.2-3.4"/></svg><span class="t">Get qualified</span><span class="d">Share your documents once. Our QA team reviews them with you.</span></button></li><li><button type="button" class="hw-item" data-k="3" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5v5M17.5 9.5v5"/><path class="a" d="m15.5 20.5 2 1.5 3.5-4"/></svg><span class="t">Ship and get paid</span><span class="d">Clear milestones from purchase order to payment.</span></button></li></ol></div>
-    <div class="actions pa"><a class="btn primary big" href="/sell">Bring your portfolio</a><a class="btn ghost big" href="https://www.axmed.com/contact">Talk to the supply team</a></div>
+
+  <div class="panel" id="buyers" role="tabpanel" aria-labelledby="g-buy" data-side="buy">
+    <div class="bento">
+      <article class="gt w2 dark">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="vial" aria-hidden="true"></canvas><h3>Compare prices, line by line.</h3></div><p>We pool your demand with other buyers. Qualified suppliers compete on your exact lines, delivered.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>Carbetocin 100 mcg/mL</b><small>40,000 ampoules, 6 quotes</small></div><em class="pill n">Closes in 2 days</em></div><div class="ui-q best" style="--r:0"><span>Supplier A</span><em class="pill v">Prequalified</em><i style="--w:58%"></i><b>Lowest</b></div><div class="ui-q" style="--r:1"><span>Supplier B</span><em class="pill v">SRA approved</em><i style="--w:66%"></i><b>+4%</b></div><div class="ui-q" style="--r:2"><span>Supplier C</span><em class="pill v">Prequalified</em><i style="--w:75%"></i><b>+9%</b></div><div class="ui-q" style="--r:3"><span>Supplier D</span><em class="pill n">In review</em><i style="--w:86%"></i><b>+14%</b></div></div></div>
+      </article>
+      <article class="gt cy">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="list" aria-hidden="true"></canvas><h3>An offer in 48 hours.</h3></div><p>Send Excel, PDF or a message.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><span class="xls">XLS</span><div><b>2027_MNCH_order.xlsx</b><small>18 lines</small></div></div><div class="ui-clock"><svg viewBox="0 0 120 120"><circle class="tr" cx="60" cy="60" r="52"/><circle class="go" cx="60" cy="60" r="52" pathLength="100"/></svg><b>48<small>hours</small></b></div><ol class="ui-tl"><li class="done"><b>List received</b><small>Monday 09:14</small></li><li class="now"><b>Offer ready</b><small>By Wednesday 09:14</small></li></ol></div></div>
+      </article>
+      <article class="gt ">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="shield" aria-hidden="true"></canvas><h3>Checked before it ships.</h3></div><p>Our QA and regulatory team checks each quote.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>Order PO-0418</b><small>Quality checks</small></div><em class="pill ok">On track</em></div><div class="ui-c"><svg viewBox="0 0 16 16"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg><span>Supplier verified</span></div><div class="ui-c"><svg viewBox="0 0 16 16"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg><span>Product qualified</span></div><div class="ui-c"><svg viewBox="0 0 16 16"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg><span>Regulatory status</span></div><div class="ui-c wait"><i></i><span>Batch release</span></div></div></div>
+      </article>
+      <article class="gt w2 mist">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="globe" aria-hidden="true"></canvas><h3>Track every order to every site.</h3></div><p>From purchase order to each facility on your list.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>PPH bundle</b><small>3 sites, 1 order</small></div><em class="pill tr">1 of 3 delivered</em></div><ol class="trk"><li class="ok" style="--r:0"><i></i><span><b>Central medical store</b><small>Received and checked</small></span><em class="pill ok">Delivered</em></li><li class="now" style="--r:1"><i></i><span><b>District hospital</b><small>On the road</small></span><em class="pill tr">In transit</em></li><li style="--r:2"><i></i><span><b>Health centre</b><small>Next on the route</small></span><em class="pill n">Scheduled</em></li></ol></div></div>
+      </article>
+      <article class="gt sage">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="box" aria-hidden="true"></canvas><h3>One contract, many sites.</h3></div><p>We deliver to your stores, hospitals and clinics.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>One purchase order</b><small>Delivery to 4 sites</small></div><em class="pill ok">Signed</em></div><div class="ui-r"><span class="site"><i class="d a"></i>Central medical store</span><span class="num">13,600</span></div><div class="ui-r"><span class="site"><i class="d b"></i>Regional store</span><span class="num">8,800</span></div><div class="ui-r"><span class="site"><i class="d c"></i>District hospital</span><span class="num">6,400</span></div><div class="ui-r"><span class="site"><i class="d a"></i>Health centre</span><span class="num">4,800</span></div></div></div>
+      </article>
+      <article class="gt w2 blush">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="ampoule" aria-hidden="true"></canvas><h3>Funding when you need it.</h3></div><p>Working capital while your funding lands, and a matching fund for maternal and newborn health.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui fund"><div class="ui-h"><div><b>Paying for your order</b><small>PPH bundle, 3 sites</small></div><em class="pill tr">RIFF</em></div><div class="bridge"><div class="br-track"><i class="br-riff"></i></div><span class="br-pt a" style="--x:0%"><i></i>Order placed</span><span class="br-pt b" style="--x:46%"><i></i>Delivered</span><span class="br-pt c" style="--x:100%"><i></i>Your funding lands</span><b class="br-lab">RIFF covers the gap</b></div><div class="match"><b>$5M</b><span><strong>MNCH Matching Fund</strong>Funded by the Gates Foundation</span></div></div></div>
+      </article>
+    </div>
+    <div class="actions get-act"><a class="btn primary big" href="/buy">Bring your list</a></div>
   </div>
-  <p class="note">Interfaces shown are illustrative.</p>
-</div></div></section>
+
+  <div class="panel" id="suppliers" role="tabpanel" aria-labelledby="g-sell" data-side="sell" hidden>
+    <div class="bento">
+      <article class="gt w2 dark">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="globe" aria-hidden="true"></canvas><h3>New markets, without new offices.</h3></div><p>In maternal and newborn health, you reach 24 buyers in 13 countries.</p><div class="figs" aria-hidden="true"><div><b>24</b><span>buyers</span></div><div><b>13</b><span>countries</span></div></div></div>
+        <div class="gt-art" aria-hidden="true"><canvas class="gx" width="720" height="720" data-shape="globe"></canvas></div>
+      </article>
+      <article class="gt cy">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="vial" aria-hidden="true"></canvas><h3>Bigger orders.</h3></div><p>We pool many buyers into tenders worth serving.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>Carbetocin 100 mcg/mL</b><small>Pooled from 6 buyers</small></div><em class="pill v">Pooled</em></div><div class="pool"><i style="--h:34%;--r:0"></i><i style="--h:22%;--r:1"></i><i style="--h:16%;--r:2"></i><i style="--h:12%;--r:3"></i><i style="--h:9%;--r:4"></i><i style="--h:7%;--r:5"></i><i class="sum" style="--h:100%;--r:7"></i></div><div class="pool-k"><span>6 buyers</span><b>40,000 ampoules</b></div></div></div>
+      </article>
+      <article class="gt ">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="list" aria-hidden="true"></canvas><h3>Quote once, reach every buyer.</h3></div><p>One quote, one contract per tender.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>Your quote</b><small>Carbetocin 100 mcg/mL</small></div><em class="pill n">Draft</em></div><div class="ui-r"><small>Lead time</small><span>8 weeks</span></div><div class="ui-r"><small>Quality</small><span>WHO prequalified</span></div><div class="ui-r"><small>Valid until</small><span>15 Dec 2026</span></div><div class="ui-btn">Send to all 6 buyers</div></div></div>
+      </article>
+      <article class="gt w2 mist">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="shield" aria-hidden="true"></canvas><h3>Get qualified once.</h3></div><p>Our QA team reviews your documents once. We reuse them on each tender.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>Supplier profile</b><small>Documents</small></div><em class="pill ok">Reused on every tender</em></div><div class="ui-r doc"><svg viewBox="0 0 16 16"><path d="M4 1.5h5.5L12.5 4.5v10h-8.5z"/><path d="M9.5 1.5v3h3"/></svg><span>GMP certificate</span><em class="pill ok">Approved</em></div><div class="ui-r doc"><svg viewBox="0 0 16 16"><path d="M4 1.5h5.5L12.5 4.5v10h-8.5z"/><path d="M9.5 1.5v3h3"/></svg><span>Product registration</span><em class="pill ok">Approved</em></div><div class="ui-r doc"><svg viewBox="0 0 16 16"><path d="M4 1.5h5.5L12.5 4.5v10h-8.5z"/><path d="M9.5 1.5v3h3"/></svg><span>WHO prequalification</span><em class="pill ok">Approved</em></div><div class="ui-r doc"><svg viewBox="0 0 16 16"><path d="M4 1.5h5.5L12.5 4.5v10h-8.5z"/><path d="M9.5 1.5v3h3"/></svg><span>Certificate of analysis</span><em class="pill n">In review</em></div></div></div>
+      </article>
+      <article class="gt sage">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="box" aria-hidden="true"></canvas><h3>Know when you get paid.</h3></div><p>Clear milestones from purchase order to payment.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>PO-0418</b><small>40,000 ampoules</small></div><em class="pill ok">Paid</em></div><ol class="steps4"><li class="done">Order</li><li class="done">Shipped</li><li class="done">Delivered</li><li class="now">Paid</li></ol></div></div>
+      </article>
+      <article class="gt w2 blush">
+        <div class="gt-copy"><div class="gt-hd"><canvas class="dm icon" width="120" height="120" data-cells="20" data-shape="ampoule" aria-hidden="true"></canvas><h3>See demand early.</h3></div><p>Open tenders and closing dates, before you plan production.</p></div>
+        <div class="gt-art" aria-hidden="true"><div class="ui"><div class="ui-h"><div><b>Open tenders</b><small>Closing soonest first</small></div></div><div class="ui-r tn"><span><b>Carbetocin 100 mcg/mL</b><small>40,000 ampoules, 6 buyers</small></span><em class="pill v">9 days left</em></div><div class="ui-r tn"><span><b>Tranexamic acid 100 mg/mL</b><small>25,000 ampoules, 4 buyers</small></span><em class="pill n">14 days left</em></div><div class="ui-r tn"><span><b>Oxytocin 10 IU/mL</b><small>60,000 ampoules, 8 buyers</small></span><em class="pill n">21 days left</em></div></div></div>
+      </article>
+    </div>
+    <div class="actions get-act"><a class="btn primary big" href="/sell">Bring your portfolio</a></div>
+  </div>
+  <p class="note">Interfaces shown are illustrative. Buyer and country counts: MNCH supply, Axmed marketplace data, November 2026.</p>
+</div></section>
+
+<section class="sol" id="solutions" aria-labelledby="sol-h" hidden><!-- parked for later: remove "hidden" and restore the nav and footer links --><div class="wrap">
+  <h2 class="h2" id="sol-h">Four solutions, <span>from factory to clinic.</span></h2>
+  <ol class="sol-chain">
+    <li class="sol-st">
+      <div class="sol-ui" aria-hidden="true">
+        <div class="sol-uh"><b>Market entry brief</b></div>
+        <div class="sol-row"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg>Registration route</div>
+        <div class="sol-row"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg>Tender calendar</div>
+        <div class="sol-row"><i class="sol-wait"></i>Price benchmark</div>
+      </div>
+      <h3 class="sol-n"><a href="https://www.axmed.com/solutions#advisory">Global Health Advisory</a></h3>
+      <p>Guidance for manufacturers and funders entering a new market.</p>
+    </li>
+    <li class="sol-st">
+      <div class="sol-ui" aria-hidden="true">
+        <div class="sol-uh"><b>Amoxicillin 500 mg</b><small>Supplier quotes</small></div>
+        <div class="sol-q best"><span>Supplier A</span><i style="--w:46%"></i><em>Best value</em></div>
+        <div class="sol-q"><span>Supplier B</span><i style="--w:68%"></i></div>
+        <div class="sol-q"><span>Supplier C</span><i style="--w:84%"></i></div>
+      </div>
+      <h3 class="sol-n"><a href="https://www.axmed.com/solutions#marketplace">Marketplace</a></h3>
+      <p>Buy from suppliers worldwide at a price you can see.</p>
+    </li>
+    <li class="sol-st">
+      <div class="sol-ui" aria-hidden="true">
+        <div class="sol-uh"><b>Order financed</b><small>Repaid as stock sells</small></div>
+        <div class="sol-pay"><i class="paid"></i><i class="paid"></i><i class="due"></i><i></i></div>
+        <div class="sol-row sol-meta"><span>Paid</span><span>Next</span><span>Later</span></div>
+        <div class="sol-row"><svg class="ck" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 8.5 2.5 2.5L12 5.5"/></svg>Stock on the shelf</div>
+      </div>
+      <h3 class="sol-n"><a href="https://www.axmed.com/solutions#financing">Integrated financing</a></h3>
+      <p>Stock the shelves now. Repay as you are paid.</p>
+    </li>
+    <li class="sol-st">
+      <div class="sol-ui" aria-hidden="true">
+        <div class="sol-uh"><b>Shipment in transit</b></div>
+        <ol class="sol-route"><li class="done">Factory</li><li class="done">Port</li><li class="now">Warehouse</li><li>Clinic</li></ol>
+      </div>
+      <h3 class="sol-n"><a href="https://www.axmed.com/solutions#logistics">Logistics SaaS</a></h3>
+      <p>One tracked record from the factory to the clinic.</p>
+    </li>
+  </ol>
+</div></section>
 
 
 <section class="sx" id="sina" aria-labelledby="sx-h">
@@ -143,22 +209,22 @@
     <ol class="sx-steps">
       <li class="on"><b>It reads your file.</b><span>Excel, PDF, Word or a WhatsApp message.</span></li>
       <li><b>It matches every line.</b><span>To real, quality-assured products.</span></li>
-      <li><b>It asks only when it must.</b><span>One clear question, not a form.</span></li>
+      <li><b>It asks when a line is unclear.</b><span>One clear question at a time.</span></li>
       <li><b>You decide when to send.</b><span>Nothing goes out without you.</span></li>
     </ol>
   </div>
   <div class="sx-stage" aria-hidden="true">
     <div class="sx-ring r3"></div><svg class="sx-svg" viewBox="-100 -100 200 200"><circle class="orbit" r="99.2" pathLength="1"/><circle class="inner" r="64" pathLength="1"/><g class="links"></g></svg>
     <div class="sx-hi"><b>Hi, I’m Sina.</b><span>Send me the list you already have.</span></div><div class="sx-core"><canvas class="sx-orb" width="480" height="480"></canvas><img class="sx-gif" src="sina/sina-flow.gif" alt=""></div>
-    <div class="sx-node" data-i="0"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Excel</span></div>
-    <div class="sx-node" data-i="1"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/></svg><span>PDF</span></div>
-    <div class="sx-node" data-i="2"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><span>WhatsApp</span></div>
-    <div class="sx-node" data-i="3"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Email</span></div>
-    <div class="sx-node" data-i="4"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6"/></svg><span>Word</span></div>
-    <div class="sx-node" data-i="5"><svg viewBox="0 0 24 24"><path d="M5 4h14v4H5zM5 10h14v4H5zM5 16h14v4H5z"/></svg><span>Catalogue</span></div>
+    <div class="sx-node" data-i="0"><canvas class="fmt" width="224" height="224" data-shape="sheet"></canvas><span>Excel</span></div>
+    <div class="sx-node" data-i="1"><canvas class="fmt" width="224" height="224" data-shape="page"></canvas><span>PDF</span></div>
+    <div class="sx-node" data-i="2"><canvas class="fmt" width="224" height="224" data-shape="chat"></canvas><span>WhatsApp</span></div>
+    <div class="sx-node" data-i="3"><canvas class="fmt" width="224" height="224" data-shape="mail"></canvas><span>Email</span></div>
+    <div class="sx-node" data-i="4"><canvas class="fmt" width="224" height="224" data-shape="list"></canvas><span>Word</span></div>
+    <div class="sx-node" data-i="5"><canvas class="fmt" width="224" height="224" data-shape="vial"></canvas><span>Catalogue</span></div>
     <div class="sx-cards">
       <div class="sx-card win c1"><div class="wh"><span class="fi">XLS</span><div><b>2027_MNCH_order.xlsx</b><small>Reading 18 lines</small></div></div><div class="bar"><i class="rd" style="--w:100%"></i></div>
-        <div class="ln"><code>Carbetocin HS 100mcg amp</code></div><div class="ln"><code>TXA 1g/10ml inj</code></div><div class="ln"><code>Miso 200 - 3 tabs ??</code></div></div>
+        <div class="ln"><code>Carbetocin HS 100mcg amp</code></div><div class="ln"><code>TXA 1g/10ml inj</code></div><div class="ln hi"><code>Miso 200 - 3 tabs ??</code><em class="ask">Unclear</em></div></div>
       <div class="sx-card win c2"><div class="wh"><div><b>Matched to the catalogue</b><small>17 of 18 lines</small></div></div>
         <div class="ln"><span class="to">Carbetocin 100 mcg/mL</span><em class="ok">Matched</em></div><div class="ln"><span class="to">Tranexamic acid 100 mg/mL</span><em class="ok">Matched</em></div><div class="ln"><span class="to">Oxytocin 10 IU/mL</span><em class="ok">Matched</em></div></div>
       <div class="sx-card win c3"><div class="wh"><div><b>One question</b><small>Misoprostol 200 mcg</small></div></div>
@@ -168,17 +234,12 @@
     </div>
   </div>
   <div class="sx-rail" aria-hidden="true"><i></i></div>
-  <p class="note sx-ill">Illustrative example.</p>
 </div>
 </section>
 
-
-
-
-
 <section class="impact" id="impact"><div class="wrap">
   <div class="im-top">
-    <h2 class="h2">We publish <span>the whole picture.</span></h2>
+    <h2 class="h2">Our 2025 results, <span>in public.</span></h2>
     <div><p>Every figure here comes from our 2025 impact report.</p><a class="btn ghost-d" href="https://www.axmed.com/impact">Read the impact report</a></div>
   </div>
   <div class="im-stats">
@@ -186,61 +247,81 @@
     <div class="im-stat"><b><i data-to="35">35</i>%</b><span>average cost savings in 2025</span></div>
     <div class="im-stat"><b><i data-to="130">130</i>+</b><span>active procurers and suppliers</span></div>
   </div>
-  <div class="im-fin">
-    <article><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.6"/><path class="a" d="M3 9.5h3M18 14.5h3"/></svg><div><h3>RIFF financing</h3><p>Working capital for buyers who would otherwise wait for a grant.</p></div></article>
-    <article><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.3-7-10a4 4 0 0 1 7-2.6 4 4 0 0 1 7 2.6c0 5.7-7 10-7 10z"/><path class="a" d="M12 9.5v6M9 12.5h6"/></svg><div><h3>$5M MNCH Matching Fund</h3><p>Funded by the Gates Foundation, matched into maternal and child health orders.</p></div></article>
+</div></section>
+
+<section class="voices" id="partners" aria-labelledby="vo-h"><div class="wrap">
+  <h2 class="h2" id="vo-h">Our partners, <span>in their own words.</span></h2>
+  <div class="vo-stage">
+    <article class="vo-q on" id="vo-0">
+      <figure class="vo-say">
+        <blockquote><p>“Through our partnership with Axmed, we have a greater impact on improving maternal and child health outcomes and ending preventable deaths in some of Africa’s most under-resourced communities.”</p></blockquote>
+        <figcaption><span class="vo-av" aria-hidden="true">SS</span><span><b>Santiago Sedaca</b>CEO, LifeNet International</span></figcaption>
+      </figure>
+      <div class="vo-proof">
+        <canvas class="vo-dm" width="560" height="560" data-shape="ampoule" aria-hidden="true"></canvas>
+        <p class="vo-k">With Axmed since December 2024</p>
+        <dl><div><dt>240k</dt><dd>carbetocin doses delivered</dd></div><div><dt>25k</dt><dd>calibrated drapes delivered</dd></div><div><dt>6</dt><dd>countries</dd></div></dl>
+      </div>
+    </article>
+    <article class="vo-q" id="vo-1">
+      <figure class="vo-say">
+        <blockquote><p>“Axmed has proven that a strong model, backed by operational excellence and deep commitment, can deliver real impact even within complex environments.”</p></blockquote>
+        <figcaption><span class="vo-av" aria-hidden="true">DM</span><span><b>Denise Tuiime Mutambi</b>Director Planning and Procurement, Joint Medical Store</span></figcaption>
+      </figure>
+      <div class="vo-proof">
+        <canvas class="vo-dm" width="560" height="560" data-shape="box" aria-hidden="true"></canvas>
+        <p class="vo-k">Ordering through Axmed since March 2025</p>
+        <dl><div><dt>106M</dt><dd>units delivered</dd></div><div><dt>82</dt><dd>orders</dd></div></dl>
+      </div>
+    </article>
   </div>
+  <div class="vo-pick">
+    <button type="button" aria-controls="vo-0" aria-pressed="true"><b>LifeNet International</b><span>6 countries</span><i aria-hidden="true"></i></button>
+    <button type="button" aria-controls="vo-1" aria-pressed="false"><b>Joint Medical Store</b><span>Uganda</span><i aria-hidden="true"></i></button>
+  </div>
+  <p class="note">Partner figures: Axmed marketplace data, November 2026.</p>
 </div></section>
 
 
-
-<section class="band voices">
-  <div class="wrap"><h2 class="h2 c">What our partners say.</h2></div>
-  <div class="rail" tabindex="0" aria-label="Partner stories">
-    <article class="card"><figure><img src="photos/midwife-mother.jpg" alt="A midwife talks a young mother through her medicine." loading="lazy" width="896" height="1200"><figcaption>Maternal health, reached.</figcaption></figure>
-      <blockquote><p>“Through our partnership with Axmed, we have a greater impact on improving maternal and child health outcomes and ending preventable deaths in some of Africa’s most under-resourced communities.”</p><footer>Santiago Sedaca, CEO, LifeNet International</footer></blockquote></article>
-    <article class="card"><figure><img src="photos/pharmacist-store.jpg" alt="A pharmacist checks a delivered carton against the order list." loading="lazy" width="896" height="1200"><figcaption>Medical stores, stocked.</figcaption></figure>
-      <blockquote><p>“Axmed has proven that a strong model, backed by operational excellence and deep commitment, can deliver real impact even within complex environments.”</p><footer>Denise Tuiime Mutambi, Director Planning and Procurement, JMS</footer></blockquote></article>
-    <article class="card"><figure><img src="photos/procurement-officer.jpg" alt="A procurement officer reviews a medicines order at his desk." loading="lazy" width="896" height="1200"><figcaption>Procurement, made clear.</figcaption></figure>
-      <blockquote><p>4.2 million patients reached in 2025.</p><footer>2025 impact report</footer></blockquote></article>
+<section class="close" aria-labelledby="cl-h"><div class="wrap">
+  <div class="cl-copy">
+    <h2 class="h2" id="cl-h">Bring your list. <span>We price it with real products.</span></h2>
+    <p class="p">Send us your 2027 list. Get an offer within 48 hours.</p>
+    <div class="cl-act"><a class="btn primary big" href="/buy?utm_source=website&amp;utm_medium=homepage&amp;utm_campaign=every-birth&amp;utm_content=close">Bring your list</a><a class="btn ghost-d big" href="https://app.axmed.com/login?utm_source=website&amp;utm_medium=homepage&amp;utm_campaign=every-birth&amp;utm_content=close">Activate an account</a></div>
+    <p class="cl-fund">Funding a programme? <a href="mailto:info@axmed.com?subject=Expression%20of%20interest">Register an expression of interest</a></p>
+    <p class="cl-fund">Supplying medicines? <a href="/sell?utm_source=website&amp;utm_medium=homepage&amp;utm_campaign=every-birth&amp;utm_content=close">Join as a supplier</a></p>
   </div>
-  <div class="wrap railnav"><button type="button" data-dir="-1" >Previous</button><button type="button" data-dir="1" >Next</button></div>
-</section>
-
-
-<section class="close"><div class="wrap">
-  <h2 class="h2">Bring your list. See it with your own products.</h2>
-  <p class="p">Our team returns an offer within 48 hours.</p>
-  <div class="actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px"><a class="btn primary big" href="/buy">Bring your list</a></div>
+  <canvas class="cl-map" aria-hidden="true"></canvas>
 </div></section>
 </main>
 
 <footer class="foot"><div class="wrap">
-  <div><svg role="img" aria-label="Axmed" class="logo" width="108" height="42" viewBox="0 0 108 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M33.0253 12.9658H36.6413L42.2087 30.2093H38.3423L37.1591 26.4906H30.9027L30.0233 29.2529C29.8415 29.8221 29.313 30.2093 28.716 30.2093H25.9023L31.0204 14.4251C31.3028 13.5542 32.1116 12.9658 33.0253 12.9658ZM36.0743 23.0415L34.0309 16.5883L31.9854 23.0415H36.0743Z" fill="white"/>
-<path d="M46.4713 23.6321L42.851 17.2773H46.8906L49.255 21.5631L51.5957 17.2773H55.6611L52.0151 23.5829L55.7338 30.2095H51.7434L49.255 25.6777L46.7173 30.2095H42.7012L46.4713 23.6321Z" fill="white"/>
-<path d="M57.4902 17.2775H61.0613V18.8544C61.6283 17.8702 62.8351 17.0571 64.4356 17.0571C66.036 17.0571 67.3412 17.7461 68.1308 18.7817C68.869 17.8959 70.1506 17.0571 72.072 17.0571C74.9285 17.0571 77.0232 19.1754 77.0232 21.5654V30.2118H73.4521V22.7978C73.4521 21.4178 72.4914 20.5063 71.259 20.5063C69.8297 20.5063 69.0423 21.5162 69.0423 22.7978V30.2118H65.4712V22.7978C65.4712 21.4178 64.5105 20.5063 63.278 20.5063C61.8487 20.5063 61.0613 21.5162 61.0613 22.7978V30.2118H57.4902V17.2775Z" fill="white"/>
-<path d="M78.6899 23.7545C78.6899 20.01 81.4972 17.0552 85.5625 17.0552C89.8739 17.0552 92.1634 20.3802 92.1634 23.7545V25.0596H82.3359C82.8045 26.5874 84.0605 27.2999 85.5625 27.2999C87.5332 27.2999 88.5923 26.2172 88.9132 25.5518L91.622 27.1779C91.1299 28.2863 89.232 30.4302 85.5625 30.4302C81.1784 30.4302 78.6899 27.4496 78.6899 23.7545ZM88.4447 22.2524C88.3462 21.4886 87.5096 20.1085 85.5133 20.1085C84.2317 20.1085 82.9265 20.7974 82.4087 22.2524H88.4447Z" fill="white"/>
-<path d="M93.396 23.7543C93.396 19.689 96.4258 17.0551 99.8 17.0551C101.475 17.0551 103.076 17.744 103.814 18.7047V13.3556C103.814 12.596 104.43 11.9819 105.188 11.9819H107.385V30.2097H103.814V28.7804C103.076 29.7411 101.473 30.4301 99.8 30.4301C96.4258 30.4301 93.396 27.9673 93.396 23.7543ZM100.442 27.0794C102.413 27.0794 103.842 25.6265 103.842 23.7543C103.842 21.8821 102.413 20.4293 100.442 20.4293C98.4713 20.4293 97.042 21.8821 97.042 23.7543C97.042 25.6265 98.4221 27.0794 100.442 27.0794Z" fill="white"/>
-<path d="M0.316558 28.6544C0.24595 28.3185 0.224553 28.1216 0.286603 27.8585L5.45816 12.4422C5.45816 12.4422 6.31403 8.84543 8.94795 8.7085C9.46361 8.68282 9.97927 8.80264 10.4372 9.04014C11.0127 9.33756 11.7744 9.92382 12.1146 11.0236C12.1146 11.0236 9.79311 8.86683 8.65054 13.2938L1.78223 34.6176L1.82288 34.7738C1.82288 34.7738 1.75227 34.7738 1.72659 34.6904L0.316558 28.6544Z" fill="white"/>
-<path d="M6.02303 38.3894L3.60308 28.9663L1.78223 34.6193L1.82288 34.7755L3.01467 39.4228C3.01467 39.4228 4.78203 40.6403 6.02303 38.3894Z" fill="#0CC4FF"/>
-<path d="M13.0671 14.7288L12.1171 11.0229C12.1171 11.0229 10.3048 9.34109 9.09375 12.0071L11.3233 20.707L13.0671 14.7288Z" fill="#0CC4FF"/>
-<path d="M21.2831 0.340045C20.8188 0.104682 20.2988 -0.0172786 19.7789 0.00197837C17.1514 0.0982631 16.3469 3.47465 16.3469 3.47465L6.65421 36.7164C5.51163 41.1434 3.01465 39.421 3.01465 39.421C3.35485 40.5229 4.13155 41.1091 4.7221 41.4087C5.24631 41.674 5.83044 41.7853 6.41457 41.7361C8.8709 41.5307 9.57271 38.6378 9.57271 38.6378L19.3552 5.01948C20.4978 0.592525 22.9905 2.32565 22.9905 2.32565C22.6503 1.22586 21.8736 0.637458 21.2831 0.340045Z" fill="white"/>
-<path d="M24.2227 7.1294L22.9924 2.328C22.9924 2.328 21.2229 1.09769 19.9819 3.35718L22.4019 12.7824L24.2227 7.1294Z" fill="#0CC4FF"/>
-<path d="M16.9137 29.7416L14.6885 21.061L12.9468 27.0457L13.8904 30.7259C13.8904 30.7259 15.7027 32.4077 16.9137 29.7416Z" fill="#0CC4FF"/>
-<path d="M25.6887 13.0945C25.7593 13.4305 25.7807 13.6273 25.7187 13.8905L20.5471 29.3067C20.5471 29.3067 19.6912 32.9035 17.0573 33.0404C16.5417 33.0661 16.026 32.9463 15.5681 32.7088C14.9925 32.4114 14.2308 31.8251 13.8906 30.7253C13.8906 30.7253 16.2122 32.8821 17.3547 28.4552L24.223 7.13129L24.1824 6.9751C24.1824 6.9751 24.253 6.9751 24.2787 7.05855L25.6887 13.0945Z" fill="white"/>
-</svg>
-<p style="margin-top:16px">Accelerating access to healthcare for all.</p></div>
-  <div><ul><li><a href="#buyers">Buyers</a></li><li><a href="#suppliers">Suppliers</a></li><li><a href="#sina">Sina</a></li></ul></div>
-  <div><ul><li><a href="https://www.axmed.com/impact">Impact</a></li><li><a href="https://www.axmed.com/about">About</a></li><li><a href="https://axmed.teamtailor.com/">Careers</a></li></ul></div>
-  <div><p>Basel, Switzerland<br>Nairobi, Kenya<br>info@axmed.com</p></div>
-  <p class="small">© Axmed 2026. Interface and imagery shown are illustrative.</p>
+  <div class="ft-top">
+    <p class="ft-say">Accelerating access to <span>healthcare for all.</span></p>
+    <div class="ft-talk"><small>Talk to us</small><a href="mailto:info@axmed.com">info@axmed.com</a><span>Basel, Switzerland · Nairobi, Kenya</span></div>
+  </div>
+  <nav class="ft-cols" aria-label="Footer">
+    <div><h3>Buy</h3><ul><li><a href="buyers.html">For buyers</a></li><li><a href="/buy">Bring your list</a></li></ul></div>
+    <div><h3>Supply</h3><ul><li><a href="suppliers.html">For suppliers</a></li><li><a href="/sell">Join as a supplier</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="#sina">Sina</a></li><li><a href="https://app.axmed.com/login">Access platform</a></li></ul></div>
+    <div><h3>Company</h3><ul><li><a href="https://www.axmed.com/impact">Impact</a></li><li><a href="https://www.axmed.com/about">About</a></li><li><a href="https://axmed.teamtailor.com/">Careers</a></li></ul></div>
+  </nav>
+  <a class="ft-big" href="#top" aria-label="Axmed, back to top"><canvas class="ft-px" aria-hidden="true"></canvas></a>
+  <div class="ft-base">
+    <p class="ft-note"><span class="ft-legal">© Axmed 2026.</span><span class="ft-tip" aria-hidden="true">Every square, a patient. 4.2M reached in 2025.</span></p>
+    <a class="ft-up" href="#top">Back to top <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg></a>
+  </div>
 </div></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="hero3d.js"></script>
-<script src="dm/shapes.js"></script>
-<script src="dm/dotmatrix.js"></script>
-<script src="site.js"></script>
-<script src="sina/sina-orb.js"></script>
-<script src="sina-scroll.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegmentsGeometry.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineMaterial.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/lines/LineSegments2.js"></script>
+<script src="dm/dotmap.js?v=35"></script>
+<script src="hero-order.js?v=35"></script>
+<script src="mark3d.js?v=35"></script>
+<script src="dm/shapes.js?v=35"></script>
+<script src="dm/dotmatrix.js?v=35"></script>
+<script src="site.js?v=35"></script>
+<script src="sina/sina-orb.js?v=35"></script>
+<script src="sina-scroll.js?v=35"></script>
 </body></html>

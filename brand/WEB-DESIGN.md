@@ -19,17 +19,19 @@ The user compares every section with Apple, Intercom, Zaro, August Health, Skydi
 ## Patterns and where they live
 | Pattern | Use it for | Built from |
 |---|---|---|
-| **Wallpaper art card** (Apple) | Any product image: a white app window floats on Axmed art with one floating detail card | `.feat .art` + `.comp .win` + `.float`; wallpapers in `site/img/wp/` (indigo-haze, indigo-dusk, cyan-deep, cyan-mist, lilac-mist, strata-brand, strata-light, strata-warm); sources in `brand/backgrounds/`, `brand/strata/` |
-| **Product window details** | Make UIs rich, not wireframes | `.ln` (raw line to matched product), `.q` + `.cost` bars, `.ck2` checklist, `.ring` progress, `.map` dotted route, `.doc` files, `.fld` form fields, `.tl` timeline, `em.ok / .ask / .tr / .n / .tag` pills |
+| **Product scene** (replaced the wallpaper art card, 15 Nov 2026) | Any product image | `.ps` + one tint class (`t-lav` list and demand, `t-ice` quotes, `t-sage` quality, `t-blush` delivery, matching `brand/product-shots`), a faint same-hue dot grid, a `.ps-card` rising from the bottom edge with its last rows fading out (so there is never an empty panel), and one `.ps-call` callout. SVG keeps its own aspect ratio (never `preserveAspectRatio="none"`), and the content agrees with its labels ("4 sites" means four rows). Examples: the eight scenes in How it works. Export with `scripts/render-product-images.mjs` |
+| **Product scene details** | Make UIs rich, not wireframes | `.ps-h` header, `.ps-th` + `.ps-row` (`c2` / `c3` / `c4` columns), `.cost` bars with relative figures, `.ps-chk` checklist, `.ps-ring` progress, `.ps-map` route, `.ps-seg` share bar, `.ps-form` fields, `.ps-tl` timeline, `.ps-pill.ok / .ask / .tr / .v / .n`. The older `.comp .win` set remains only for the Sina cards |
+| **Outcome bento** (August, 15 Nov 2026) | Benefit grids | `.gt` tile in one tint, `canvas.dm.icon` beside a serif `h3`, then a `.ui` product card (ghost card via `::before`) that bleeds off the bottom; wide tiles (`.w2`) put it on the right and run it 96px past the edge, padding the content back in. One big dot-matrix art (`canvas.gx`) at most per side |
 | **Custom icons** | Feature captions, step lists, cards | Inline 24px SVG, stroke 1.6 in `--indigo-app` with ONE cyan detail (`class="a"`), inside a 44–48px rounded `--indigo-mist` square. Examples: the eight icons in How it works and the two in Impact. No icon fonts or emoji |
 | **Dot-matrix** (Zaro) | Illustrations with motion, small animated icons, maps | `brand/dot-matrix/` (`AxDotMatrix(canvas,{shape,theme,icon})`, shapes in `shapes.js`); gallery `brand/dot-matrix/index.html` |
-| **Dot globe** | Hero and "network" moments | `site/hero3d.js` (three.js) |
+| **Isometric line scene** | Hero: order list → pooled pallet → delivered by land, sea and air | `site/hero-order.js` (three.js, orthographic iso camera, flat three-tone faces, fat indigo outlines; same family as the marketplace's landing art) |
+| **Dot globe** | "Network" moments (kept, not on the homepage now) | `site/hero3d.js` (three.js) |
 | **Strata art** | Dark bands, closing CTAs, wallpapers | `brand/strata/`, generator `scripts/make-terrain.py` |
 | **Atmosphere mists** (ElevenLabs) | Light section backgrounds, behind the orb | `brand/backgrounds/`, `site/img/mist.jpg` |
 | **Sina orb** | Sina only (one section on the page) | Live WebGL `site/sina/sina-orb.js` (`createSinaOrb(canvas).setState('idle'|'listening'|'working'|'speaking')`); GIF fallback `sina-flow.gif` |
 | **Notched photo card / white title strip** (Zaro) | Photo storytelling | `.card figcaption`, `.split .shot figcaption` |
 | **Living figures** | Statistics | Count-up plus 100-square grid (`.dotfig`) or oversized numerals on strata (`.impact`) |
-| **Pinned scroll scenes** | Hero, Sina, How it works | Sticky `*-pin` inside a tall section; progress 0..1 from `getBoundingClientRect`; everything scrubbed by scroll. Test hooks `h3dAt()`, `sxAt()` |
+| **Pinned scroll scenes** | Hero, the mark, Sina, How it works | Sticky `*-pin` inside a tall section; progress 0..1 from `getBoundingClientRect`; everything scrubbed by scroll. Test hooks `h3dAt()`, `mkAt()`, `sxAt()` |
 
 ## Motion (non-negotiable)
 Run `.claude/skills/review-animations` on every motion change; plan bigger changes with `improve-animations` and `choreograph`. The audit is in `site/MOTION.md`.
