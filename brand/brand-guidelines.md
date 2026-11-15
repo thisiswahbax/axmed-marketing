@@ -47,27 +47,29 @@ brand posts, max one in personal posts. No hashtags walls (≤3).
 
 ## 4. Look
 
-### Colour (see `tokens.json` / `tokens.css`)
+### Colour
+
+The colour tokens live in `brand/system.css`, and the brand kit (`brand/kit/index.html`) shows every
+one with its job. `tokens.css` and `tokens.json` are generated from it. The core set:
 
 | Token | Hex | Use |
 |---|---|---|
-| Indigo | `#261C7A` | Headlines, brand fields, opening/closing cards |
-| Indigo deep | `#1C1560` | Gradients, dark backgrounds |
-| Indigo soft | `#EDEBFA` | Tints, chips |
-| Cyan | `#0CC4FF` | **Accent only** — one highlight per frame |
-| Cyan soft | `#E6F8FF` | Highlight backgrounds |
-| Ink | `#24283E` | Body text |
-| Muted | `#5C657D` | Secondary text |
-| Canvas | `#F7F9FD` | Page/slide background |
-| Line | `#DFE5F0` | Dividers, card borders |
-| Amber | `#9A5B00` / soft `#FFF4DF` | Only for "needs a look" / warnings |
+| `--indigo` | `#261C7A` | Headlines, the logo, indigo fields |
+| `--indigo-ink` | `#1E1662` | Dark sections, Sina, primary chips |
+| `--indigo-app` | `#392AB0` | Buttons, links, product UI accents |
+| `--cyan` | `#0CC4FF` | **Accent only**: one highlight per frame |
+| `--paper` | `#FAFAFC` | Page and slide background |
+| `--ink` | `#141A2E` | Body text |
+| `--ink-quiet` | `#5F667B` | Captions, sources |
+| `--line` | `#E6E8EF` | Dividers, card edges |
+| `--ask` / `--ask-mist` | `#8A4B00` / `#FFF4DF` | Only for "needs a look" and warnings |
 
 Ratio guide: ~60% canvas/white, ~30% indigo, ≤10% cyan.
 
 ### Type
 
 - **Headings:** Instrument Sans 600–700, tight tracking (-0.02em).
-- **Editorial statements:** Instrument Serif, regular plus *italic* on one key word.
+- **Editorial statements:** Instrument Serif, regular. No italic accent words: use a two-tone headline instead.
 - **Body/UI:** Inter 400–600. Tabular numerals for figures.
 - Both free on Google Fonts.
 

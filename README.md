@@ -38,6 +38,7 @@ CLAUDE.md                 rules Claude follows in this repo (read it once yourse
   skills/axmed-*          Axmed skills (brand voice, posts, carousel, email, WhatsApp, VO …)
   agents/brand-reviewer   independent reviewer against the central test
 brand/                    guidelines, tokens (json/css), logo, moodboard
+brand/kit/                the brand kit: one browsable page for web and social (see its README)
 strategy/                 positioning, campaign briefs, asset plan, channels, measures, fact sheet
   templates/              interview guide, case study, consent checklist
 content/<campaign>/       drafts and finals per channel

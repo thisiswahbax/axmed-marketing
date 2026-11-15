@@ -47,6 +47,7 @@ If the answer is no, rewrite before showing it to anyone.
 | What | Where |
 |---|---|
 | Brand rules, tokens, logo, moodboard | `brand/` |
+| Brand kit for web and social (generated page) | `brand/kit/`, `scripts/build-kit.py`, `scripts/build-tokens.py` |
 | Photo-led post templates (primary look) | `brand/photo-system/`, photos in `assets/photos/` |
 | Atmosphere backgrounds (ElevenLabs-style, one hue each; light mists behind the orb) | `brand/backgrounds/`, `scripts/make-backgrounds.py` |
 | Dot-matrix illustrations with motion | `brand/dot-matrix/`, `scripts/export-dotmatrix.mjs` |

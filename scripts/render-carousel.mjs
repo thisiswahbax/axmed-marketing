@@ -36,11 +36,15 @@ const bgCss = fs.readdirSync(pdir).filter((f) => f.endsWith(`_${W}x${H}.svg`)).m
   const name = f.replace(`_${W}x${H}.svg`, "");
   const dark = !name.endsWith("-light");
   // quiet zone: the pattern fades out where the copy sits (left/bottom), stays full on the right
-  const fade = dark ? "28,21,96" : "247,249,253";
+  const fade = dark ? "30,22,98" : "250,250,252";   // --indigo-ink / --paper, so the veil meets the slide colour
   const veil = `linear-gradient(100deg, rgba(${fade},.96) 0%, rgba(${fade},.88) 48%, rgba(${fade},0) 82%)`;
   return `.slide.bg-${name}{background:${veil}, url("file://${path.join(pdir, f)}") center/cover no-repeat !important}` +
     `.slide.bg-${name}::before{display:none}` +
-    (dark ? `.slide.bg-${name} h1,.slide.bg-${name} h2,.slide.bg-${name} .brand,.slide.bg-${name} .num,.slide.bg-${name} blockquote{color:#fff}.slide.bg-${name} p.lead,.slide.bg-${name} cite,.slide.bg-${name} .source,.slide.bg-${name} .page,.slide.bg-${name} li{color:#D9D6F5}` : "");
+    (dark ? [
+      // text on a dark pattern: system.css tokens, with the old values as a fallback for slides that only load tokens.css
+      `.slide.bg-${name} :is(h1,h2,.head,.big,.quote,.brand,.num,blockquote){color:var(--on-indigo,#F4F2FD)}`,
+      `.slide.bg-${name} :is(.head span,p.lead,.lead,cite,.cite,.source,.src,.page,.pnum,li,.label){color:var(--on-indigo-soft,#C9C4EC)}`,
+    ].join("") : "");
 }).join("\n");
 await page.addStyleTag({ content: bgCss });
 await page.evaluate(() => document.fonts.ready);
