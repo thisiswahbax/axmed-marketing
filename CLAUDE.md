@@ -91,3 +91,5 @@ It is the approved design system: two-tone headlines, wallpaper art cards with f
 dot-matrix and strata art, the Sina orb, pinned scroll scenes, motion tokens and the review checklist. Reuse those
 patterns and assets (`site/img/wp/`, `brand/backgrounds/`, `brand/strata/`, `brand/dot-matrix/`, `brand/moodboard/refs/`); don't invent a parallel style.
 Run `.claude/skills/review-animations` on motion changes, and the Hallmark lint before handing back.
+
+For where every asset lives (icons, product images, wallpapers, illustrations, photos, references), see **`ASSETS.md`**.
