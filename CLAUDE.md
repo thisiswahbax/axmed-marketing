@@ -84,3 +84,10 @@ Photos: never pick from Pexels, Unsplash or Pixabay (their terms bar AI tools fr
 
 Run the `brand-reviewer` subagent (`.claude/agents/brand-reviewer.md`) on every finished asset and
 include its verdict at the bottom of the file.
+
+## Website and product imagery: read this first
+Before any work on `site/`, web sections, product images, UI mockups or scroll motion, read **`brand/WEB-DESIGN.md`** in full.
+It is the approved design system: two-tone headlines, wallpaper art cards with floating product windows, custom icons,
+dot-matrix and strata art, the Sina orb, pinned scroll scenes, motion tokens and the review checklist. Reuse those
+patterns and assets (`site/img/wp/`, `brand/backgrounds/`, `brand/strata/`, `brand/dot-matrix/`, `brand/moodboard/refs/`); don't invent a parallel style.
+Run `.claude/skills/review-animations` on motion changes, and the Hallmark lint before handing back.
