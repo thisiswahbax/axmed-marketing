@@ -90,3 +90,19 @@
   addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(frame); }, { passive: true });
   sec.querySelectorAll('[role=tab]').forEach(function (t) { t.addEventListener('click', function () { last = -1; frame(); }); });
 })();
+
+/* impact: one wave in, figures count up once */
+(function () {
+  var sec = document.querySelector('.impact'); if (!sec) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  sec.classList.add('arm');
+  var nums = sec.querySelectorAll('[data-to]');
+  nums.forEach(function (el) { el.textContent = (+el.dataset.dec ? (0).toFixed(1) : '0'); });
+  function count(el) {
+    var to = +el.dataset.to, dec = +el.dataset.dec || 0, t0 = performance.now();
+    (function tick(now) { var k = Math.min(1, (now - t0) / 1600), v = to * (1 - Math.pow(1 - k, 4)); el.textContent = v.toFixed(dec); if (k < 1) requestAnimationFrame(tick); })(t0);
+  }
+  new IntersectionObserver(function (es, io) {
+    if (es[0].isIntersecting) { sec.classList.add('in'); nums.forEach(count); io.disconnect(); }
+  }, { threshold: 0.3 }).observe(sec);
+})();

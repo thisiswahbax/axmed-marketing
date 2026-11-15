@@ -538,3 +538,35 @@ html:not(.sx-on) .sx-svg circle { stroke-dasharray: none; }
 .sx-hi span { display: block; margin-top: 8px; font: 400 18px/1.4 var(--body); color: var(--on-indigo-soft); }
 .js.sx-on .sx-hi { opacity: 0; }
 html:not(.sx-on) .sx-hi { position: static; transform: none; margin-bottom: 24px; }
+
+/* impact: a full-bleed strata band, oversized figures that count up, two financing cards */
+.impact { position: relative; color: var(--on-indigo); background: var(--indigo-ink) url("img/wp/strata-brand.jpg") center 70% / cover; overflow: clip; }
+.impact::before { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--indigo-ink) 0%, var(--scrim) 45%, var(--scrim-soft) 100%); }
+.impact .wrap { position: relative; padding-block: 128px 112px; }
+.im-top { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: end; }
+.im-top .h2 { color: var(--on-indigo); }
+.im-top .h2 span { color: var(--on-indigo-soft); }
+.im-top p { font: 400 18px/1.5 var(--body); color: var(--on-indigo-soft); margin: 0 0 20px; }
+.btn.ghost-d { border: 1.5px solid var(--on-dark-line); color: var(--on-indigo); }
+@media (hover: hover) { .btn.ghost-d:hover { background: var(--on-dark-fill); border-color: var(--on-indigo); } }
+.im-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 96px; }
+.im-stat { border-top: 1px solid var(--on-dark-line); padding-top: 24px; }
+.im-stat b { display: block; font: 600 clamp(72px, 10vw, 152px)/.9 var(--display); letter-spacing: -.05em; color: var(--on-indigo); }
+.im-stat b i { font-style: normal; font-variant-numeric: tabular-nums; }
+.im-stat:last-child b { color: var(--cyan); }
+.im-stat span { display: block; margin-top: 16px; font: 400 18px/1.45 var(--body); color: var(--on-indigo-soft); }
+.im-fin { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 80px; }
+.im-fin article { display: flex; gap: 20px; align-items: flex-start; padding: 28px 32px; border-radius: 24px; background: var(--card); color: var(--ink); box-shadow: 0 40px 80px -40px var(--scrim); }
+.im-fin .ico { flex: none; width: 48px; height: 48px; padding: 11px; border-radius: 14px; background: var(--indigo-mist); fill: none; stroke: var(--indigo-app); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.im-fin .ico .a { stroke: var(--cyan); stroke-width: 1.8; }
+.im-fin h3 { font: 600 22px/1.25 var(--display); letter-spacing: -.02em; margin: 2px 0 0; color: var(--indigo); }
+.im-fin p { font: 400 17px/1.5 var(--body); color: var(--ink-soft); margin: 6px 0 0; }
+/* entrance: figures rise as one wave, cards follow */
+.js .impact.arm .im-stat, .js .impact.arm .im-fin article { opacity: 0; transform: translateY(var(--rise, 16px)); transition: opacity var(--dur-scene) var(--ease-out), transform var(--dur-scene) var(--ease-out); transition-delay: var(--d, 0ms); }
+.js .impact.arm.in .im-stat, .js .impact.arm.in .im-fin article { opacity: 1; transform: none; }
+.im-stat:nth-child(2) { --d: 90ms; } .im-stat:nth-child(3) { --d: 160ms; }
+.im-fin article { --rise: 10px; --d: 260ms; } .im-fin article + article { --d: 310ms; }
+@media (max-width: 960px) {
+  .im-top, .im-stats, .im-fin { grid-template-columns: minmax(0, 1fr); }
+  .im-stats { margin-top: 56px; gap: 40px; } .impact .wrap { padding-block: 88px 72px; }
+}
