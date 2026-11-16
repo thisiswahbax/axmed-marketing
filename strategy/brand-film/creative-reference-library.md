@@ -37,12 +37,12 @@ Sixteen real films, chosen for idea and human stakes over production gloss. Six 
 | # | Film | Brand | Agency / production | Year | Length | Market | Main mechanism | Watch |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | The Journey Home | Teradata | Not published | 2025 | Short film | Global | Countdown; invisible infrastructure | [teradata.com](https://www.teradata.com/insights/videos/the-journey-home) |
-| 2 | The Walk (Together as One) | Getinge | McCann Health Nordic | 2018 | Brand film | Global | Simple physical journey; invisible system | [YouTube](https://www.youtube.com/watch?v=iJMIGRl3SGo) |
+| 2 | The Walk (Together as One) | Getinge | McCann Stockholm (The Drum: McCann Health Nordic); prod. Bacon; dir. Jacob Marky | 2018 | Brand film | Global | Simple physical journey; invisible system | [YouTube](https://www.youtube.com/watch?v=iJMIGRl3SGo) |
 | 3 | Hearing Hands | Samsung | Leo Burnett Istanbul | 2015 | 2:45 | Turkey | Technology invisible; documentary realism | [TIME](https://time.com/3740376/samsung-ad-deaf-man-neighbors-learn-sign-language) |
 | 4 | The Greatest | Apple | Dir. Kim Gehrig | 2022 | Anthem film | Global | Technology disappears into people | [Vimeo](https://vimeo.com/channels/staffpicks/776811579) |
 | 5 | Year in Search 2017 | Google | 72andSunny with Google Brand Studio; prod. HECHO EN 72 | 2017 | Year-end film | Global | Many moments make one global story | [shots](https://shots.net/news/view/94638-google-year-in-search-2017) |
 | 6 | Reunion | Google Search | Ogilvy & Mather India; dir. Amit Sharma | 2013 | 3:32 | India / Pakistan | Unexpected reveal; chain across a border | [Wikipedia](<https://en.wikipedia.org/wiki/Reunion_(advertisement)>) |
-| 7 | LIVING | Bristol Myers Squibb | HUMAN | \~2021 | Documentary short | Global (4 countries) | Documentary realism; many lives, one thread | [bms.com/living](http://www.bms.com/living) |
+| 7 | LIVING | Bristol Myers Squibb | HUMAN; dir. Jonathan Olinger | 2022 | Documentary short | China, Sweden, France, USA | Documentary realism; many lives, one thread | [HUMAN case study](https://www.human.us/project/living) |
 | 8 | Wall and Chain | Airbnb | VCCP Berlin; animation by Psyop | 2014 | \~75s | Germany / global | Sell the human outcome, not the product | [LBB](https://lbbonline.com/news/vccp-berlin-airbnbs-story-of-breaking-down-walls) |
 | 9 | Giving | TrueMove H | See Cannes Lions entry | 2013 | 3:00 | Thailand | Chain reaction across 30 years; medicine | [Cannes Lions](https://lovethework.com/work-awards/campaigns/giving-236231) |
 | 10 | Unsung Hero | Thai Life Insurance | Ogilvy & Mather Bangkok; dir. Thanonchai Sornsriwichai | 2014 | \~3:00 | Thailand | Invisible good deeds; quiet payoff | [The Drum](https://www.thedrum.com/news/2022/06/14/world-s-best-ads-ever-16-thai-life-pulls-heartstrings-with-unsung-hero) |
@@ -125,14 +125,14 @@ Each film is broken down the same way: idea, human story, why we care, structure
 - **Why it works:** The audience is a step ahead and willing the reunion to happen.
 - **Axmed takeaway:** A chain of small, humble steps across borders can be the most emotional thing on screen. Our chain crosses borders too.
 
-### 7. LIVING — Bristol Myers Squibb (\~2021)
+### 7. LIVING — Bristol Myers Squibb (2022)
 
 - **Idea:** Patients around the world tell their own stories, with no product and no claims.
-- **Human story:** Real patients in four countries (including a farmer in rural China) and the people who care for them. They want ordinary life back.
+- **Human story:** Real patients in four countries (rural China, Sweden, France and the USA) and the people who care for them. They want ordinary life back.
 - **Why we care:** It's real, and they're given time.
 - **Structure:** Separate lives linked by match cuts into one shared experience.
 - **Technology:** None shown; the company's role is implied.
-- **Visual language:** Cinéma vérité shot on anamorphic lenses (2.35:1); a touch of magic realism; three continents.
+- **Visual language:** Cinéma vérité on anamorphic lenses (2.35:1), a touch of magic realism, and a distinct look per country: fluid in rural China, composed in Sweden, contemplative in France, suburban routine in the USA. Directed by Jonathan Olinger (HUMAN); premiered to BMS staff in Global Patient Week, then screened at SXSW.
 - **Why it works:** Documentary truth with cinematic craft. The match cuts make many stories feel like one.
 - **Axmed takeaway:** Use match cuts between continents (a hand on a box in a factory, the same gesture in a clinic) to show one system across many places.
 
@@ -434,10 +434,12 @@ The look is documentary realism with cinematic restraint: LIVING's anamorphic v�
 
 - [Teradata: The Journey Home](https://www.teradata.com/insights/videos/the-journey-home)
 - [The Drum: McCann Health Nordic, Getinge "The Walk"](https://www.thedrum.com/creative-works/mccann-health-nordic-getinge-the-walk)
+- [Clapboard: Getinge "The Walk" credits (McCann, Bacon, dir. Jacob Marky)](https://www.clapboard.com/archive/getinge-the-walk-healthcare)
 - [TIME: Samsung "Hearing Hands"](https://time.com/3740376/samsung-ad-deaf-man-neighbors-learn-sign-language) and [Ninja Marketing (agency: Leo Burnett Istanbul)](https://www.ninjamarketing.it/2015/03/11/samsung-insegna-il-linguaggio-dei-segni-ad-un-intero-quartiere-video)
 - [Colossal: Apple "The Greatest"](https://www.thisiscolossal.com/2022/12/apple-the-greatest/)
 - [shots: Google Year in Search 2017](https://shots.net/news/view/94638-google-year-in-search-2017)
 - [Wikipedia: Reunion (advertisement)](<https://en.wikipedia.org/wiki/Reunion_(advertisement)>)
+- [HUMAN: LIVING case study](https://www.human.us/project/living)
 - [Shorty Awards: Bristol Myers Squibb "LIVING"](https://shortyawards.com/8th-impact/living)
 - [LBB: VCCP Berlin, Airbnb "Wall and Chain"](https://lbbonline.com/news/vccp-berlin-airbnbs-story-of-breaking-down-walls)
 - [Bangkok Post: TrueMove H "Giving"](https://www.bangkokpost.com/tech/370166/true-move-ad-brings-internet-users-to-tears)

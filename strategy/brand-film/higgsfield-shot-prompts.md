@@ -1,6 +1,7 @@
 # "The List": Higgsfield generation prompt
 
 Use this with a browser agent on higgsfield.ai, or with the Higgsfield MCP (`https://mcp.higgsfield.ai/mcp`) once it's connected. The storyboard is in `creative-reference-library.md` (section "Storyboard: The List, 60 seconds").
+Aligned with the 16 Nov 2026 storyboard: S07 and S13 are cut (numbers kept so file names don't change); S04, S09 and S10 follow the revised beats.
 
 ## Ground rules
 - Never buy credits, upgrade or enter payment details. State the credit balance and estimated cost first, then wait for approval.
@@ -31,14 +32,12 @@ Documentary cinematic still, anamorphic 2.39 look, shallow depth of field, natur
 | S01 | Close-up of a laptop screen glow on a dark wooden desk at night, a cold cup of tea, papers (blank plate; the spreadsheet line is added in post) | Very slow push-in, the screen glow flickers softly |
 | S02 | GRACE at her desk in a regional health office at night, stacks of paper, rubbing her eyes, lamp light | She rubs her eyes, then leans toward the screen; handheld, subtle |
 | S03 | Over-the-shoulder of GRACE looking at her laptop, screen out of focus, her face lit by it | Slow drift past her shoulder; she nods slightly |
-| S04 | Close-up of GRACE's hand on a mouse, finger about to click | She hesitates, then clicks once |
+| S04 | Close-up of GRACE's hands at her laptop keyboard, one hand near the trackpad | She types a few keys, pauses, types again, then clicks once |
 | S05 | SUPPLIER QA LEAD in a QA lab reviews a batch certificate on a screen, vials behind, morning light | He clicks once, then looks up |
 | S06 | Warehouse at dawn, a pallet of medicine cartons being stretch-wrapped, a label in focus (no readable text) | Wrap film circles the pallet; a forklift passes behind |
-| S07 | A paper desk calendar with many days crossed out | Pages flick quickly, then the calendar snaps shut |
 | S08 | A white truck on a red-earth road in rural East Africa at golden hour; a motorbike with a cool box peels off | Tracking shot alongside, dust rising |
-| S09 | PHARMACIST in a storeroom ticks a printed delivery list beside opened cartons | He ticks one line, pauses, smiles slightly |
-| S10 | MIDWIFE at night opens a small medicine fridge, cool light on her face | Door opens, she reaches in, her shoulders drop with relief |
+| S09 | PHARMACIST's hand over an opened cool box of plain cartons, a printed delivery list on the shelf beside it | His hand enters from the same side as GRACE's click, clicks the pen once and ticks one line; no smile |
+| S10 | MIDWIFE at night opens a small medicine fridge, cool light on her face | Door opens, she sees the box, her shoulders drop and she exhales; no smile, no tears |
 | S11 | Close-up of the MIDWIFE's hand writing a time on a paper chart, warm lamp light | She writes, then rests the pen (newborn's cry in sound only) |
 | S12 | GRACE at dawn closing her laptop, looking out at a city waking up | Laptop closes; slow pull-back to a wide shot |
-| S13 | Two plates: the empty office desk at dawn, and a quiet labour ward at dawn | Static, the light rising |
 | S14 | End card made in post: Axmed logo on indigo, "Every line is someone." | — |

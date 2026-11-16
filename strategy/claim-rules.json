@@ -1,0 +1,94 @@
+{
+  "$comment": "Rules for scripts/check-numbers.mjs. Approved figures come from strategy/fact-sheet.md, not from here. This file lists numbers that are not claims (dates, doses, the 48-hour promise), claims we must never publish, and phrases that break the non-negotiables in CLAUDE.md. Not-claim patterns use [ \\t], never \\s: a pattern that crosses a line break can swallow a real claim on the next line (\"story card\" in a title, then a big 0).",
+  "notClaims": [
+    {
+      "pattern": "\\b20\\d\\d\\b",
+      "why": "a year"
+    },
+    {
+      "pattern": "\\b\\d{1,2}(?:[ \\t]*[–-][ \\t]*\\d{1,2})?[ \\t]+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\b",
+      "why": "a date"
+    },
+    {
+      "pattern": "\\b48[ \\t-]*(?:hours?|h)\\b",
+      "why": "the CTA promise: offer within 48 hours"
+    },
+    {
+      "pattern": "\\b\\d+[ \\t]*/[ \\t]*\\d+\\b",
+      "why": "a page number such as 1/6"
+    },
+    {
+      "pattern": "\\b\\d+(?:[.,]\\d+)?[ \\t]*(?:mg|mcg|µg|g|ml|mL|IU|L)\\b",
+      "why": "a dose or strength in a product name"
+    },
+    {
+      "pattern": "\\b\\d{3,4}[ \\t]*[×x][ \\t]*\\d{3,4}\\b",
+      "why": "an image size"
+    },
+    {
+      "pattern": "\\b\\d+(?:[.,]\\d+)?(?:[ \\t]*[–-][ \\t]*\\d+(?:[.,]\\d+)?)?[ \\t-]*(?:s|secs?|seconds?|mins?|minutes?)\\b",
+      "why": "a duration in a script"
+    },
+    {
+      "pattern": "\\b\\d+[ \\t]*(?:slides?|posts?|clips?|cut-downs?)\\b",
+      "why": "a count of our own assets"
+    },
+    {
+      "pattern": "(?:^|\\n)[ \\t]*\\d+[.)](?=[ \\t])",
+      "why": "a numbered list marker"
+    },
+    {
+      "pattern": "\\b(?:Campaign|Act|Phase|Step|C)[ \\t]*0?\\d+\\b",
+      "why": "a campaign, act or step name"
+    },
+    {
+      "pattern": "\\b(?:email|film|story|card|clip|slide|version|v)[ \\t]*\\d+\\b",
+      "why": "the name of one of our assets, such as story email 1"
+    }
+  ],
+  "phrases": [
+    {
+      "pattern": "because of",
+      "near": "maternal death",
+      "why": "Say \"where the bundle was in use\", never \"because of\"."
+    },
+    {
+      "pattern": "where the (?:PPH )?bundle was (?!in use)\\w+",
+      "near": "maternal death",
+      "why": "Fact-sheet wording, exactly: \"where the bundle was in use\"."
+    },
+    {
+      "pattern": "revolutionis|revolutioniz",
+      "why": "Axmed is the enabler, not the hero."
+    },
+    {
+      "pattern": "innovative platform|our platform revolution",
+      "why": "No self-congratulation."
+    },
+    {
+      "pattern": "IDA Foundation|Mission Pharma",
+      "why": "Never name competitors."
+    },
+    {
+      "pattern": "disrupt",
+      "why": "No hype words."
+    },
+    {
+      "pattern": "beneficiar",
+      "why": "Name the person, not \"beneficiaries\"."
+    },
+    {
+      "pattern": "miracle drug",
+      "why": "Only as a named health worker's quote, with name and role.",
+      "level": "warn"
+    }
+  ],
+  "placeholders": [
+    "[NUMBER NEEDED",
+    "[REF",
+    "[VERIFY",
+    "[NAME]",
+    "[FACILITY]",
+    "[Pending"
+  ]
+}

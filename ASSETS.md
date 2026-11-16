@@ -22,6 +22,8 @@
 | DNA patterns | `brand/patterns/` | |
 | Design references (your screenshots) | `brand/moodboard/refs/`, notes in `brand/moodboard/references.md` | |
 | Campaign assets (carousels, cards) | `content/01-every-birth/` | |
+| **Asset queue** (status of every asset) | `strategy/campaigns/01-every-birth/assets.json` | `asset-plan.md` (generated), or `node scripts/assets.mjs due` |
+| Asset folder example (brief → review → approval) | `content/01-every-birth/cards/A1.6-impact-card/` | `review.md` |
 | LinkedIn video post | `content/linkedin/strata-one-route/` | |
 | Showcase deck (PDF) | `content/showcase/` | |
 | Motion audit | `site/MOTION.md` | |
