@@ -4,9 +4,10 @@
 //   npm start                    → http://localhost:3094 (landing page), then opens your browser
 //   node scripts/serve.mjs --port 4000 --no-open
 //
-// The repo root is served, so pages that reach into brand/ keep working. The landing page's
-// /buy and /sell links point at routes on the live site; here they open the local buyer and
-// supplier pages instead.
+// Only site/ and brand/ are served: the rest of the repo (.env, .git, strategy, drafts) never is.
+// Requests must come to localhost, which blocks DNS-rebinding pages from reading files through it.
+// The landing page's /buy and /sell links point at routes on the live site; here they open the
+// local buyer and supplier pages instead.
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
@@ -25,17 +26,37 @@ const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": 
   ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
   ".webp": "image/webp", ".gif": "image/gif", ".mp4": "video/mp4", ".woff2": "font/woff2", ".ico": "image/x-icon" };
 
+// Only these folders can be read. Real paths are compared, so a symlink can't lead outside them.
+const ALLOWED = ["site", "brand"].map((d) => fs.realpathSync(path.join(ROOT, d)) + path.sep);
+const HOSTS = new Set([`localhost:${PORT}`, `127.0.0.1:${PORT}`, `[::1]:${PORT}`]);
+const notFound = (res) => res.writeHead(404, { "Content-Type": "text/plain" }).end("Not found");
+
+// the file to serve, or null: anything hidden, outside site/ and brand/, or missing
+function resolve(url) {
+  // any segment starting with a dot (.env, .ENV, .git) is refused, whatever its case or separator
+  if (url.split(/[\\/]/).some((seg) => seg.startsWith("."))) return null;
+  const candidates = [path.join(ROOT, url), path.join(ROOT, "site", url)];   // site.css, img/… are asked from /
+  for (let file of candidates) {
+    if (!fs.existsSync(file)) continue;
+    if (fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
+    if (!fs.existsSync(file)) continue;
+    const real = fs.realpathSync(file);
+    if (ALLOWED.some((dir) => real.startsWith(dir)) && fs.statSync(real).isFile()) return real;
+  }
+  return null;
+}
+
 const server = http.createServer((req, res) => {
-  let url = decodeURIComponent(new URL(req.url, "http://x").pathname).replace(/\/+$/, "") || "/";
+  if (!HOSTS.has((req.headers.host || "").toLowerCase())) { res.writeHead(403, { "Content-Type": "text/plain" }).end("Forbidden host"); return; }
+  if (req.method !== "GET" && req.method !== "HEAD") { res.writeHead(405).end(); return; }
+  let url;
+  try { url = decodeURIComponent(new URL(req.url, "http://localhost").pathname).replace(/\/+$/, "") || "/"; }
+  catch { notFound(res); return; }
   if (REDIRECTS[url]) { res.writeHead(302, { Location: REDIRECTS[url] }).end(); return; }
-  url = ROUTES[url] || url;
-  let file = path.join(ROOT, url);
-  if (!file.startsWith(ROOT + path.sep)) { res.writeHead(403).end(); return; }   // stay inside the repo
-  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
-  // the landing page's own files (site.css, img/…) sit in site/; serve them from there when asked from /
-  if (!fs.existsSync(file) && fs.existsSync(path.join(ROOT, "site", url))) file = path.join(ROOT, "site", url);
-  if (!fs.existsSync(file) || /(^|\/)\.env/.test(url)) { res.writeHead(404, { "Content-Type": "text/plain" }).end(`Not found: ${url}`); return; }
+  const file = resolve(ROUTES[url] || url);
+  if (!file) { notFound(res); return; }
   res.writeHead(200, { "Content-Type": TYPES[path.extname(file).toLowerCase()] || "application/octet-stream", "Cache-Control": "no-store" });
+  if (req.method === "HEAD") { res.end(); return; }
   fs.createReadStream(file).pipe(res);
 });
 
