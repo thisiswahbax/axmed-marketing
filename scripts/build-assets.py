@@ -147,16 +147,20 @@ f'''<section class="slide field">
 </section>''']
 write("content/01-every-birth/carousel/A1.5-pph-bundle/slides.html", page(up, a15, "A1.5 The PPH bundle"))
 
-# ---------- cards ----------
-up3 = "../../../"
-cards = [
+# ---------- A1.6 impact card (its own asset folder: brief, copy, slides, renders, review, approval) ----------
+a16 = [
 f'''<section class="slide field">
   <p class="big" style="left:60px;top:110px;font-size:440px;margin:0">0</p>
   <h1 class="head" style="left:72px;top:560px;width:920px">maternal deaths where the bundle was used.</h1>
   <p class="lead" style="left:72px;top:900px;width:860px">Northern Ghana. Midwives did the work; the bundle was there.</p>
   <p class="src" style="left:72px;bottom:150px">Source: field report to attach. <span class="flag">Reference required</span></p>
   <div class="brand"></div>
-</section>''',
+</section>''']
+write("content/01-every-birth/cards/A1.6-impact-card/slides.html", page("../../../../", a16, "A1.6 Impact story card"))
+
+# ---------- cards ----------
+up3 = "../../../"
+cards = [
 f'''<section class="slide">
   <h1 class="head" style="left:72px;top:110px;width:900px;color:var(--indigo)">MNCH through Axmed, so far.</h1>
   <div style="left:72px;right:72px;top:420px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px 48px">
@@ -168,7 +172,7 @@ f'''<section class="slide">
   <p class="src" style="left:72px;bottom:150px;width:900px">Axmed marketplace data, 5 Nov 2026. Ordered means a buyer purchase order was submitted. <span class="flag">Pending fact-sheet sign-off</span></p>
   <div class="brand"></div>
 </section>''']
-write("content/01-every-birth/cards/cards.html", page(up3, cards, "A1.6 impact, A2.2 data"))
+write("content/01-every-birth/cards/cards.html", page(up3, cards, "A2.2 data"))
 wa = [f'''<section class="slide sq field">
   <div class="halo" style="width:700px;height:700px;right:-240px;top:-200px"></div>
   <div class="orb" style="width:300px;height:300px;right:72px;top:72px"></div>

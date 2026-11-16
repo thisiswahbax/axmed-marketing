@@ -77,6 +77,22 @@ body { background: var(--paper-warm); font-family: var(--body); color: var(--ink
 .field .src { color: var(--on-indigo-soft); }
 .flag { font: 600 17px var(--body); color: var(--ask); background: var(--ask-mist); padding: 4px 12px; border-radius: 6px; }
 
+/* two-tone headline: a statement, then a quieter continuation in a <span>. Never italic */
+.head, .big, .quote { color: var(--indigo); }
+.field :is(.head, .big, .quote), .on-dark :is(.head, .big, .quote) { color: var(--on-indigo); }
+.head span { color: var(--indigo-quiet); }
+.field .head span, .on-dark .head span { color: var(--on-indigo-soft); }
+.big .accent { color: var(--cyan); }
+.pnum { font: 500 22px var(--body); color: var(--ink-quiet); }
+.field .pnum { color: var(--on-indigo-soft); }
+/* hairline list for components and steps; numbers only when the order matters */
+.items { list-style: none; padding: 0; margin: 0; font: 500 34px/1.3 var(--body); color: var(--ink); }
+.items li { padding: 24px 0; border-top: 1px solid var(--line); }
+.items li:last-child { border-bottom: 1px solid var(--line); }
+.items small { display: block; margin-top: 4px; font: 400 24px/1.35 var(--body); color: var(--ink-quiet); }
+.quote { font: 400 84px/1.08 var(--serif); letter-spacing: -.01em; color: var(--indigo); margin: 0; }
+.cite { font: 500 26px/1.4 var(--body); color: var(--ink-quiet); font-style: normal; }
+
 /* brand slot: renderer fills .brand with the official logo */
 .brand { left: 72px; bottom: 64px; }
 

@@ -16,6 +16,9 @@ Dots scatter in, assemble into the shape, then a soft scan passes and the cyan p
 | `globe` | Multi-site delivery, countries served |
 | `orb` | Sina (when the real orb is too heavy for the layout) |
 | `mark` | The Axmed mark, brand moments |
+| `sheet`, `page`, `chat`, `mail` | The formats Sina reads (Excel, PDF, WhatsApp, email), used on the Sina orbit |
+
+**Options:** `icon: true` draws on a transparent canvas with no grid. `cy: 0.36` moves the shape's centre up (share of the height) to leave room for a caption. `manual: true` returns `drawAt(t)` so scroll or your own clock can drive the assembly (the homepage Sina orbit does this).
 
 **Add a shape:** add an entry to `shapes.js` with SVG paths in a 0–100 box: `fill` (dithered body), optional `edge` (outline), `accent` (the cyan points, keep it small: one idea lit per shape).
 

@@ -47,6 +47,7 @@ If the answer is no, rewrite before showing it to anyone.
 | What | Where |
 |---|---|
 | Brand rules, tokens, logo, moodboard | `brand/` |
+| Brand kit for web and social (generated page) | `brand/kit/`, `scripts/build-kit.py`, `scripts/build-tokens.py` |
 | Photo-led post templates (primary look) | `brand/photo-system/`, photos in `assets/photos/` |
 | Atmosphere backgrounds (ElevenLabs-style, one hue each; light mists behind the orb) | `brand/backgrounds/`, `scripts/make-backgrounds.py` |
 | Dot-matrix illustrations with motion | `brand/dot-matrix/`, `scripts/export-dotmatrix.mjs` |
@@ -54,13 +55,17 @@ If the answer is no, rewrite before showing it to anyone.
 | Product imagery: product cards, premium shots, line illustrations, Sina orb | `brand/product-shots/README.md`, `brand/product-cards/`, `brand/illustrations/`, `brand/sina/` |
 | DNA patterns + photo frames (secondary) | `brand/patterns/`, `scripts/make-patterns.py`, `scripts/treat-photo.py` |
 | Positioning, campaign briefs, channel plan, measures, fact sheet | `strategy/` |
-| Interview guide, case-study structure, consent checklist | `strategy/templates/` |
-| Drafts and finished copy, per campaign and channel | `content/<campaign>/<channel>/` |
+| Interview guide, case-study structure, consent checklist; brief, review and approval templates | `strategy/templates/` |
+| The asset queue: one entry per asset, with status, maker, approvers, folder | `strategy/campaigns/<campaign>/assets.json` (change it with `scripts/assets.mjs`) |
+| One folder per asset: brief, copy, slides, renders, review, approval | `content/<campaign>/<channel>/<asset-id>-<slug>/` (e.g. `cards/A1.6-impact-card/`) |
+| Drafts not yet moved into an asset folder | `content/<campaign>/<channel>/` |
 | Remotion video projects | `video/<asset-id>/` (e.g. `video/A1.1-hero-film/`) |
 | Helper scripts (carousel render, UTM builder) | `scripts/` |
 
-File names: `<asset-id>_<slug>_v<n>.md` (e.g. `A1.5_pph-bundle-5-slides_v1.md`). Asset IDs come
-from `strategy/campaigns/01-every-birth/asset-plan.md`.
+Asset IDs come from `strategy/campaigns/01-every-birth/assets.json`. `asset-plan.md` next to it is
+generated from the JSON: never edit the table by hand. Inside an asset folder, files keep fixed
+names (`brief.md`, `copy.md`, `slides.html`, `renders/`, `review.md`, `approval.md`) so agents and
+scripts find them.
 
 ## Tools available
 
@@ -82,5 +87,28 @@ Photos: never pick from Pexels, Unsplash or Pixabay (their terms bar AI tools fr
 
 ## Review before handing over
 
-Run the `brand-reviewer` subagent (`.claude/agents/brand-reviewer.md`) on every finished asset and
+Check every number and risky phrase against the fact sheet with the script, and paste its output
+into the asset's `review.md` (format: `strategy/templates/review.md`):
+
+```bash
+node scripts/check-numbers.mjs <asset-folder>            # while drafting: placeholders warn
+node scripts/check-numbers.mjs <asset-folder> --final    # before approval: placeholders fail
+```
+
+It reads approved figures from `strategy/fact-sheet.md` and the rest from `strategy/claim-rules.json`.
+Clear a number that isn't a claim with a comment in the file (`<!-- numbers-ok: 50% (MgSO4
+strength) -->`), and fence mock UI with `<!-- illustrative:start -->` … `<!-- illustrative:end -->`.
+Move an asset's status with `node scripts/assets.mjs status <id> <status> "<note>"`; only a person
+sets `approved`, `scheduled` or `live` (with `--by <name>`).
+
+Then run the `brand-reviewer` subagent (`.claude/agents/brand-reviewer.md`) on every finished asset and
 include its verdict at the bottom of the file.
+
+## Website and product imagery: read this first
+Before any work on `site/`, web sections, product images, UI mockups or scroll motion, read **`brand/WEB-DESIGN.md`** in full.
+It is the approved design system: two-tone headlines, wallpaper art cards with floating product windows, custom icons,
+dot-matrix and strata art, the Sina orb, pinned scroll scenes, motion tokens and the review checklist. Reuse those
+patterns and assets (`site/img/wp/`, `brand/backgrounds/`, `brand/strata/`, `brand/dot-matrix/`, `brand/moodboard/refs/`); don't invent a parallel style.
+Run `.claude/skills/review-animations` on motion changes, and the Hallmark lint before handing back.
+
+For where every asset lives (icons, product images, wallpapers, illustrations, photos, references), see **`ASSETS.md`**.

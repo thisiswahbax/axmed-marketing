@@ -9,10 +9,10 @@
     indigo: { bg: "#261C7A", grid: "rgba(244,242,253,.10)", mark: "rgba(244,242,253,.35)", dot: [150, 142, 210], hi: [12, 196, 255], soft: [200, 240, 255] },
   };
   function rnd(seed) { let s = seed >>> 0 || 1; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
-  function mask(W, H, shape, kind, stroke) {
+  function mask(W, H, shape, kind, stroke, cy = 0.5) {
     const c = document.createElement("canvas"); c.width = W; c.height = H; const x = c.getContext("2d");
     const [bx, by, bw, bh] = shape.box || [0, 0, 100, 100]; const s = Math.min(W, H) * 0.78 / Math.max(bw, bh);
-    x.translate(W / 2, H / 2); x.scale(s, s); x.translate(-(bx + bw / 2), -(by + bh / 2));
+    x.translate(W / 2, H * cy); x.scale(s, s); x.translate(-(bx + bw / 2), -(by + bh / 2));
     x.lineJoin = x.lineCap = "round"; x.fillStyle = x.strokeStyle = "#fff";
     const list = shape[kind] || (kind === "edge" ? shape.fill : []);
     for (const d of list) {
@@ -26,7 +26,8 @@
   window.AxDotMatrix = function (canvas, opt = {}) {
     const shape = window.AX_SHAPES[opt.shape || "shield"], th = THEMES[opt.theme || "night"], R = rnd(opt.seed || 7);
     const W = canvas.width, H = canvas.height, g = Math.round(Math.min(W, H) / (opt.cells || 64));
-    const F = mask(W, H, shape, "fill"), E = mask(W, H, shape, "edge"), A = mask(W, H, shape, "accent", shape.accentStroke);
+    const cy = opt.cy ?? 0.5;   // vertical centre of the shape, as a share of the height (leave room for a caption)
+    const F = mask(W, H, shape, "fill", 0, cy), E = mask(W, H, shape, "edge", 0, cy), A = mask(W, H, shape, "accent", shape.accentStroke, cy);
     const dots = [];
     for (let y = g / 2; y < H; y += g) for (let x = g / 2; x < W; x += g) {
       const i = (Math.floor(y) * W + Math.floor(x)) * 4, f = F[i + 3] > 128, e = E[i + 3] > 128, a = A[i + 3] > 128, r = R();

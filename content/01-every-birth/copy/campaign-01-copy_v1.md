@@ -64,11 +64,8 @@ UTM: `node scripts/utm.mjs https://axmed.com/<path> <source> <medium> <asset-id>
 >
 > Planning 2027? Send us your list: [link · utm_content=A1.5]
 
-## A1.6: Impact story card (Thu 10 Dec) · `cards/A1.6_impact-card.jpg` **[REF required]**
-> In northern Ghana, facilities recorded zero maternal deaths where the PPH bundle was in use [REF].
-> The midwives did the work. The bundle was on the shelf. Every birth deserves both.
-
-**WhatsApp version:** "Something worth sharing: facilities in northern Ghana recorded zero maternal deaths where the PPH bundle was in use [REF]. That's why we're making the bundle simpler to buy. [link]"
+## A1.6: Impact story card (Thu 10 Dec)
+Moved to its asset folder: `cards/A1.6-impact-card/copy.md`.
 
 ---
 
