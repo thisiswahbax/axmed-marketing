@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "node scripts/serve.mjs",
     "carousel": "node scripts/render-carousel.mjs",
     "utm": "node scripts/utm.mjs"
   },

@@ -13,6 +13,7 @@
 </p>
 
 <p align="center">
+  <a href="#see-it-first">See it first</a> ·
   <a href="#start-here">Start here</a> ·
   <a href="#set-up">Set up</a> ·
   <a href="#how-an-asset-gets-made">How an asset gets made</a> ·
@@ -47,7 +48,8 @@ Claude reads [`CLAUDE.md`](CLAUDE.md) in every session, so the house rules trave
 
 | I want to… | Open | Or ask Claude |
 |---|---|---|
-| See the brand at a glance | [`brand/kit/`](brand/kit/) (open `index.html` from a local server) | "Show me the brand kit" |
+| See the landing page | `npm start`, then <http://localhost:3094> | "Run the site and open the landing page" |
+| See the brand at a glance | `npm start`, then <http://localhost:3094/kit> | "Show me the brand kit" |
 | Find an asset or a file | [`ASSETS.md`](ASSETS.md) | "Where are the product images?" |
 | Make a post, carousel, email or WhatsApp card | The asset's row in the [queue](strategy/campaigns/01-every-birth/asset-plan.md) | "Make A1.5, the PPH bundle carousel" |
 | Check a draft before it goes out | `node scripts/check-numbers.mjs <folder> --final` | "Check this post" |
@@ -55,12 +57,25 @@ Claude reads [`CLAUDE.md`](CLAUDE.md) in every session, so the house rules trave
 | Pick up the brand film | [`strategy/brand-film/`](strategy/brand-film/) | "Where are we on The List?" |
 | Continue in a fresh Claude session | [`START-HERE.md`](START-HERE.md), then [`HANDOFF.md`](HANDOFF.md) | Paste the first message from START-HERE |
 
-## Set up
+## See it first
 
-You need [Claude Code](https://claude.com/claude-code), Node 20+ and [uv](https://docs.astral.sh/uv/).
+All you need is [Node](https://nodejs.org) 20 or newer. Nothing to install:
 
 ```bash
 git clone https://github.com/thisiswahbax/axmed-marketing.git && cd axmed-marketing
+npm start
+```
+
+Your browser opens the landing page at <http://localhost:3094>. The buyer and supplier pages are at
+[`/buy`](http://localhost:3094/buy) and [`/sell`](http://localhost:3094/sell), and the brand kit at
+[`/kit`](http://localhost:3094/kit). Press Ctrl+C to stop.
+
+## Set up
+
+To make assets with Claude, you also need [Claude Code](https://claude.com/claude-code) and [uv](https://docs.astral.sh/uv/).
+From the repo folder:
+
+```bash
 cp .env.example .env             # add your ElevenLabs key and the absolute content path
 npm install                      # Playwright, to render slides and cards to PNG and PDF
 ./scripts/install-skills.sh      # community skills (marketing, Remotion, documents)
@@ -185,6 +200,7 @@ scripts/                    build, render, check and queue scripts (below)
 
 | Script | What it does |
 |---|---|
+| `serve.mjs` (`npm start`) | Serves the landing page, the buyer and supplier pages, and the brand kit on localhost; no install |
 | `assets.mjs` | The asset queue: `table`, `status`, `due`, `check`, `show` |
 | `check-numbers.mjs` | Checks every number and risky phrase against the fact sheet; `--final` also fails open placeholders |
 | `render-carousel.mjs` | Renders each slide of an HTML file to PNG, plus one PDF |
